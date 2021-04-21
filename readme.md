@@ -40,7 +40,7 @@ php bin/phpunit --testdox
     symfony serve
 
 # Permet de créer des fichiers
-    symfony console make:controller NomDuFichier
+    symfony console make: NomDuFichier
 ou
     symfony console m:con NomDuFichier
 
