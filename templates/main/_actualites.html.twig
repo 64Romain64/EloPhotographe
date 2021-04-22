@@ -3,13 +3,10 @@
 		<div class="row margin-lg-30t margin-lg-80b margin-sm-10b margin-xs-0t">
 			<div class="col-sm-12  margin-lg-30b">
 				<div class="about-details style3">
-
 					<div class="content">
 						<h5 class="subtitle">ABOUT ME</h5>
 						<div class="text">
-							<p>My greatest ambition is to create powerful images that commemorate, across
-																                                            generations, the people we love and the good times we have had. Creativity, hard
-																                                            work and experience are the engines that keep it all going.</p>
+							<p>My greatest ambition is to create powerful images that commemorate, across																								                                            work and experience are the engines that keep it all going.</p>
 						</div>
 						<div class="button-wrap">
 							<a href="#" class="a-btn-2 button">
@@ -17,9 +14,7 @@
 								<i class="fa fa-caret-right" aria-hidden="true"></i>
 							</a>
 						</div>
-
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -28,56 +23,38 @@
 				<div class="portfolio l-more col-3 big_gap masonry_modern clearfix no_margin" data-space="5">
 					<div class="margin-lg-30b">
 						<div class="wpb_wrapper">
-							<div class="item block_item_0 creativity">
-								<a class="item-link gridrotate-alb default yes" target="_self">
-									<div class="item-img">
-										<div class="images-one">
-											<img data-lazy-src="{{ asset ('images/img3.jpg') }}" src="{{ asset ('images/img3.jpg') }}" class="" alt=""/></div>
+							{% for projet in projets %}
+								{% if projet.statut == "2" %}
+									{% for image in projet.photo.snapshot %}
+									<div class="item block_item_0 creativity">
+										<a class="item-link gridrotate-alb default yes" target="_self">
+											<div class="item-img">
+												<div class="images-one">
+													{# {{ dump(projet.photo.snapshot[1].file) }} #}
+													<img data-lazy-src="" src="{{ asset ('images/' ~ image.file) }}" class="" alt=""/></div>
+											</div>
+											<div class="item-overlay"></div>
+											<div class="portfolio-title">
+												<h5>{{image.nom}}</h5>
+												<div class="social-icon fa fa-share-alt">
+													<ul class="big_gap_share">
+														<li>
+															<div class="fa fa-facebook" data-share="http://www.facebook.com/sharer.php?u=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&amp;t=IMPRESSURE"></div>
+														</li>
+														<li>
+															<div class="fa fa-pinterest-p" data-share="http://pinterest.com/pin/create/button/?url=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&media=http://wp.themedemo.co/whizz-black/wp-content/uploads/2017/06/1.jpg"></div>
+														</li>
+														<li>
+															<div class="fa fa-twitter" data-share="http://twitter.com/home/?status=IMPRESSURE - http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/"></div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</a>
 									</div>
-									<div class="item-overlay"></div>
-									<div class="portfolio-title">
-										<h5>IMPRESSURE</h5>
-										<div class="social-icon fa fa-share-alt">
-											<ul class="big_gap_share">
-												<li>
-													<div class="fa fa-facebook" data-share="http://www.facebook.com/sharer.php?u=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&amp;t=IMPRESSURE"></div>
-												</li>
-												<li>
-													<div class="fa fa-pinterest-p" data-share="http://pinterest.com/pin/create/button/?url=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&media=http://wp.themedemo.co/whizz-black/wp-content/uploads/2017/06/1.jpg"></div>
-												</li>
-												<li>
-													<div class="fa fa-twitter" data-share="http://twitter.com/home/?status=IMPRESSURE - http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/"></div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</a>
-							</div>
-                            <div class="item block_item_0 creativity">
-								<a class="item-link gridrotate-alb default yes" target="_self">
-									<div class="item-img">
-										<div class="images-one">
-											<img data-lazy-src="{{ asset ('images/img4.jpg') }}" src="{{ asset ('images/img4.jpg') }}" class="" alt=""/></div>
-									</div>
-									<div class="item-overlay"></div>
-									<div class="portfolio-title">
-										<h5>TEST</h5>
-										<div class="social-icon fa fa-share-alt">
-											<ul class="big_gap_share">
-												<li>
-													<div class="fa fa-facebook" data-share="http://www.facebook.com/sharer.php?u=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&amp;t=IMPRESSURE"></div>
-												</li>
-												<li>
-													<div class="fa fa-pinterest-p" data-share="http://pinterest.com/pin/create/button/?url=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&media=http://wp.themedemo.co/whizz-black/wp-content/uploads/2017/06/1.jpg"></div>
-												</li>
-												<li>
-													<div class="fa fa-twitter" data-share="http://twitter.com/home/?status=IMPRESSURE - http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/"></div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</a>
-							</div>
+									{% endfor %}
+								{% endif %}
+							{% endfor %}
 						</div>
 					</div>
 				</div>

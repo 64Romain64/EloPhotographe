@@ -71,6 +71,12 @@
 								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li>
 								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">ABOUT</a></li>
 								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">CONTACT</a></li>
+								{% if app.user %}
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
+								{% else %}
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
+								{% endif %}
 								{# <li
 									<a href="#">SHOP</a>
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
@@ -91,7 +97,7 @@
 										<li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
 								</div>
-								<div class="mini-cart-wrapper">
+								{# <div class="mini-cart-wrapper">
 									<a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
 									<div class="whizz_mini_cart">
 										<ul class="cart_list product_list_widget">
@@ -99,7 +105,7 @@
 										</ul>
 										<!-- end product list -->
 									</div>
-								</div>
+								</div> #}
 							</div>
 						</nav>
 						<!-- NAVIGATION -->
