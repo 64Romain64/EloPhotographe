@@ -1,0 +1,1305 @@
+/* =====  COLOR  ===== */
+
+/* ======================== ffffff ======================== */
+
+::-moz-selection {
+    color: #ffffff;
+}
+
+::selection {
+    color: #ffffff;
+}
+
+::-moz-selection {
+    color: #ffffff;
+}
+
+#footer .widget_text form input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+#footer .widget_text form input::-moz-placeholder {
+    color: #ffffff;
+}
+
+#footer .widget_text form input:-ms-input-placeholder {
+    color: #ffffff;
+}
+
+#footer .widget_text form input:-moz-placeholder {
+    color: #ffffff;
+}
+
+.text-light p,
+.text-light a,
+.text-light,
+.highlight,
+.a-btn,
+.a-btn-2,
+.a-btn-2:hover,
+.a-btn-2:visited,
+.a-btn-2:focus,
+.a-btn-2:active,
+.header_trans-fixed.header_top_bg .logo span,
+.header_trans-fixed.header_top_bg #topmenu ul li a,
+.header_trans-fixed .mob-nav i,
+.header_trans-fixed .whizz-top-social .social-icon,
+.header_trans-fixed .right-menu #topmenu .whizz-top-social .social li a,
+.top-banner .subtitle,
+.top-banner .title,
+.top-banner .descr,
+.about-section .a-btn-2:hover,
+.gallery-item .info-content h5,
+.modern .gallery-item .info-content h5,
+.portfolio-wrapper .load-more.button,
+.item-overlay > h5,
+.classic .item-overlay h5,
+.portfolio.big_gap .social-icon,
+.portfolio.big_gap .portfolio-title,
+.portfolio.big_gap .big_gap_share li button,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2:hover,
+.dgwt-jg-gallery.justified-gallery .dgwt-jg-caption span,
+.lg .lg-sub-html h4,
+.team-member .social .wrap a,
+.team-member.fullheight .info .title,
+.team-member.fullheight .info .description,
+.post-box .text h6,
+.post-box .text span,
+.post-content h5,
+.post-content .date,
+.single-post .title,
+.wpcf7 form input[type="submit"],
+form.wpcf7-form #submit,
+.a-btn-2.wpc-but::after,
+.wpcf7 form input[type="submit"]:hover,
+form.wpcf7-form #submit:hover,
+#footer .copyright a,
+#footer .social-links a,
+.widget_search input[type="submit"],
+.post-details .date-post,
+.post-details .author,
+.banner-slider-wrap .title,
+.banner-slider-wrap .subtitle,
+.banner-slider-wrap .descr,
+.banner-slider-wrap .swiper-arrow-right,
+#contactform #submit,
+.comments-form #submit,
+.post-info span a,
+mark,
+ins,
+.post-nav a,
+.pages,
+.page-numbers:not(.next, .prev),
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit],
+.woocommerce-page.woocommerce-cart a.button:hover,
+.woocommerce-page.woocommerce-checkout a.button:hover,
+.woocommerce-page.woocommerce a.button:hover,
+.woocommerce-page.woocommerce button.button.alt:hover,
+.woocommerce button.button.alt:hover,
+a.button.checkout:hover,
+.woocommerce ul.products li.product .whizz-prod-list-image .whizz-add-to-cart a,
+.woocommerce-page.woocommerce .woocommerce-message a.button,
+.woocommerce .whizz_images span.onsale,
+.woocommerce ul.products li.product .whizz-prod-list-image .onsale,
+.woocommerce .woocommerce-message .showcoupon,
+.woocommerce .woocommerce-message a,
+.woocommerce .woocommerce-info .showcoupon,
+.woocommerce .woocommerce-info .showlogin,
+.single-product .product .summary .cart .group_table td.label,
+.whizz_product_detail .product .summary .cart .group_table td.label,
+.single-product .product .summary .cart .button:hover,
+.whizz_product_detail .product .summary .cart .button:hover,
+.woocommerce ul.products li.product .whizz_product_list_name .count,
+.header_trans-fixed .mini-cart-wrapper .whizz-shop-icon::before,
+#topmenu .whizz_mini_cart .product_list_widget .empty,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_name,
+#topmenu .whizz_mini_cart a.button,
+.full_screen_slider .swiper-arrow-left,
+.full_screen_slider .swiper-arrow-right,
+.full-screen-slider__img .full-content-wrap,
+.full_screen_slider .slider-click,
+.full_screen_slider .slider-click.left .arrow::before,
+.full_screen_slider .slider-click.right .arrow::before,
+.whizz_copyright_overlay_text,
+.whizz-sound-btn:before,
+.iframe-video .video-content .play-button,
+.iframe-video .video-content .play-button::before,
+.iframe-video .video-content .video-close-button,
+.multiscroll-tooltip,
+.multiscroll-slider .descr,
+.scroll-btn::before,
+.multiscroll-slider .title a,
+.error404 .hero-inner .bigtext,
+.error404 .hero-inner .title,
+.rsArrow,
+.portfolio-single-content .gallery-single.infinite_full_gallery .item-single a .info-content h5,
+.iframe-video.banner-video .video-content a,
+.iframe-video.banner-video .video-content .play-button::before,
+.kenburns-wrap .caption,
+.kenburns-play::before,
+.portfolio-slider-wrapper.slider_simple .info,
+.portfolio-slider-wrapper.slider_simple .portfolio-title,
+.caption-images-portfolio .close-btn,
+.caption-images-portfolio span,
+.caption-images-portfolio p,
+.portfolio-pagination.slider_simple::before,
+.main-header-testimonial .title,
+.main-header-testimonial .content-slide .description h1,
+.main-header-testimonial .content-slide .description h2,
+.main-header-testimonial .content-slide .description h3,
+.main-header-testimonial .content-slide .description h4,
+.main-header-testimonial .content-slide .description h5,
+.main-header-testimonial .content-slide .description h6,
+.main-header-testimonial .content-slide .description p,
+.main-header-testimonial .content-slide .author,
+.sliphover-overlay div,
+.parallax-window .content-parallax .title,
+.parallax-window .content-parallax .category-parallax a,
+.parallax-window .content-parallax .category-parallax a:hover,
+.whizzInstagramWidget,
+.ContactWidget h3,
+.ContactWidget div.contact_content,
+.ContactWidget .contact_url,
+.ContactWidget a.fa,
+#footer .widget_text h5,
+#footer .widget_text .textwidget > p,
+#footer .widget_text .wpcf7-response-output,
+#footer .widget_text form::after,
+#footer .widget_text form input:not([type="submit"]),
+.portfolio-slider-wrapper.slider_classic .content-wrap,
+.portfolio-slider-wrapper.slider_classic .content-wrap .excerpt p,
+.portfolio-slider-wrapper.slider_classic .content-wrap .a-btn:hover,
+.pricing-gallery .hover-caption,
+.swiper3-container.carousel-albums .swiper3-button-next::before,
+.swiper3-container.carousel-albums .swiper3-button-prev::before,
+.carousel-albums .image-wrap .caption .title,
+.carousel-albums .image-wrap .caption .descr,
+.events-single-content.protected-page .input_protected_wrapper::after,
+.single-portfolio .protected-page .input_protected_wrapper::after,
+.events-single-content.protected-page input[type="submit"],
+.single-portfolio .protected-page input[type="submit"],
+.stripped-wrapper .stripped-link .stripped-text .title,
+.stripped-wrapper .stripped-link .stripped-text .subtitle,
+.swiper-container-vert-slider .swiper-slide .container .wrap-text,
+.swiper-container-vert-slider .swiper-slide .container .wrap-text .subtitle a,
+.swiper-container-vert-slider .swiper-slide .container .wrap-text .slide-text-more,
+.swiper-container-vert-slider .swiper-button::before,
+.swiper-album .swiper3-slide .link-album-slide .title-wrap .title,
+.main-album-anim-wrap,
+.content__subtitle a,
+.content__desc,
+.content__link,
+.content__link:hover,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2:hover,
+.img-slider .flex-next,
+.img-slider .flex-prev,
+.post .post-wrap-item.text,
+.post-wrap-item.text .post-content i,
+.post-wrap-item.text .post-content blockquote,
+.woocommerce div.product form.cart .button::after,
+.input_post_wrapper::after,
+.woocommerce-page.woocommerce-cart .woocommerce input.button,
+.woocommerce-page.woocommerce-checkout .woocommerce input.button,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_price,
+.single-product .product .woocommerce-Reviews #review_form_wrapper .comment-form .form-submit input#submit,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper .comment-form .form-submit input#submit,
+.input_shop_wrapper::after,
+.woocommerce ul.products li.product .whizz-prod-list-image .whizz-link,
+#topmenu .whizz_mini_cart a.button,
+form.wpcf7-form .input_protected_wrapper::after,
+.landing_split .content-wrap .portfolio-title,
+.landing_split .content-wrap .excerpt,
+.landing_split .content-wrap .a-btn:hover,
+.showcase_slider .slide-image .arrow::before,
+.showcase_slider .slide-title,
+.exhibition-wrap .btn::before,
+.exhibition-wrap .btn--toggle.btn--active,
+.exhibition-wrap .slide__name,
+.exhibition-wrap .slide__title,
+.exhibition-wrap .cat,
+.exhibition-wrap .cat a,
+.banner-slider .page-view .project .text h1,
+.banner-slider .page-view .project .text p,
+.flow-slider .swiper-slide-active .flow-title,
+.contacts-info-wrap.style4 .additional-content-wrap,
+.contacts-info-wrap.style4 .additional-content-wrap .content-item a:hover,
+.contacts-info-wrap.style4 .additional-content-wrap .title,
+.client-wrap .client-overlay,
+.events-single-content .main-top-content h2,
+.events-single-content .end-event,
+.item .item-img .end-event,
+.single-proof_gallery #pixproof_gallery .proof-photo .meta__action.select-action:before,
+.single-proof_gallery #pixproof_gallery .proof-photo .proof-photo__bg .proof-photo__id,
+.header_trans-fixed.header_top_bg .mini-cart-wrapper .whizz-shop-icon .cart-contents-count,
+.portfolio-slider-wrapper.slider_simple .info::before {
+    color: #ffffff;
+}
+
+body,
+.text-light .bottom-line:after,
+.white,
+.header_top_bg,
+.header_trans-fixed.header_top_bg.open,
+#topmenu,
+.flex-control-paging li a,
+.banner-gallery .content-wrap,
+.action,
+.portfolio-wrapper .portfolio.grid.grid_modern .item-portfolio-content,
+.post-box .post-descr,
+.img-slider .flex-next,
+.img-slider .flex-prev,
+.single-post .single-content .swiper-container .description,
+.single-post .single-content .swiper-arrow-right,
+.single-post .single-content .swiper-arrow-left,
+#footer.white-footer,
+.widget_search input[type="text"],
+.widget_search input[type="submit"]:hover,
+.black p.separator,
+.mb_YTPPlaypause:before,
+.whizz_images .pagination .swiper-pagination-switch,
+.full_screen_slider .swiper-arrow-left::before,
+.full_screen_slider .swiper-arrow-right::before,
+.full_screen_slider .slider-click .arrow::after,
+.pricing-item,
+.ms-section,
+.scroll-btn::after,
+.thumb-slider-wrapp .sub-thumb-slider,
+.thumb-slider-wrapp .thumb-slider-wrapp-arrow .hide-images,
+.thumb-slider-wrapp .thumb-slider-wrapp-arrow .show-images,
+.portfolio-pagination.slider_simple::after,
+.main-header-testimonial .pagination span,
+.main-header-testimonial .content-slide .logo-customer::before,
+.popup-content-details .content,
+.twitter-wrapper span::before,
+.pricing-gallery .hover-caption,
+.swiper3-container.carousel-albums .swiper3-button-next::after,
+.swiper3-container.carousel-albums .swiper3-button-prev::after,
+.line-of-images.logos2 a::before,
+.swiper-container-vert-slider .swiper-button::after,
+.swiper-album .swiper3-wrapper,
+.swiper-album .swiper3-slide,
+.swiper-album .swiper3-slide .link-album-slide .title-wrap::before,
+.img-slider .flex-next,
+.img-slider .flex-prev,
+.showcase_slider .slide-image .arrow::after,
+.exhibition-wrap .btn::after,
+.gallery-single .pinterest .info-content h5::before,
+.gallery-single .pinterest .info-content h5::after,
+.caption-images-portfolio .close-btn::before {
+    background: #ffffff;
+}
+
+.pricing-item .mask-image .pricing_mask,
+.coming-soon .svg .maskRect {
+    fill: #ffffff;
+}
+
+.a-btn,
+.content__link,
+.woocommerce ul.products li.product .whizz-prod-list-image .whizz-add-to-cart a,
+.woocommerce-page.woocommerce .woocommerce-message a.button {
+    border-bottom: 1px solid #ffffff;
+}
+
+.a-btn::after,
+.swiper-container-vert-slider .swiper-slide .container .wrap-text .slide-text-more::after {
+    border-left: 4px solid #ffffff;
+}
+
+.flex-control-paging li a,
+.swiper-container-vert-slider .swiper-slide .container .wrap-text .slide-text-more,
+#topmenu .whizz_mini_cart a.button {
+    border: 1px solid #ffffff;
+}
+
+.portfolio.big_gap .social-icon::before,
+.portfolio-slider-wrapper.slider_simple .info,
+.caption-images-portfolio .close-btn,
+#footer .widget_text form input[type="submit"] {
+    border: 2px solid #ffffff;
+}
+
+.fullview .rsArrow .rsArrowIcn {
+    border-color: #ffffff;
+}
+
+/* =================  BACKGROUND OPACITY ==================== */
+
+#footer .widget_text form input:not([type="submit"]) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.events-single-content.protected-page input[type="password"],
+.single-portfolio .protected-page input[type="password"] {
+    color: #b2b2b2;
+}
+
+.sidebar-item ul li {
+    color: #1b1b1b;
+}
+
+.whizz_copyright_overlay {
+    background: #1b1b1b;
+}
+
+/* ======================== 1b1b1b ======================== */
+
+.widget_text form input::-webkit-input-placeholder {
+    color: #1B1B1B;
+}
+
+.widget_text form input::-moz-placeholder {
+    color: #1B1B1B;
+}
+
+.widget_text form input:-ms-input-placeholder {
+    color: #1B1B1B;
+}
+
+.widget_text form input:-moz-placeholder {
+    color: #1B1B1B;
+}
+
+body,
+.text-dark,
+.top-menu .logo span,
+.right-menu .logo span,
+#topmenu ul li a,
+.header_trans-fixed.header_top_bg.open #topmenu ul li a,
+.mob-nav,
+.whizz-top-social .social-icon,
+#topmenu .whizz-top-social .social li a,
+.banner-gallery .content-wrap .title,
+.action .title,
+.action .subtitle,
+.about-section .subtitle,
+.about-section .title,
+.about-section .a-btn-2,
+.fullwidth .gallery-item .info-content h5,
+.fullwidth .gallery-item .info-content .subtitle,
+.portfolio.classic.big .portfolio-title,
+.portfolio.masonry .item-portfolio-content .portfolio-title,
+.single-proof_gallery .single-content > .title,
+.single-proof_gallery .title,
+.post-box .post-descr h6,
+.post-box .post-descr p,
+.post_list .post-box-img-wrapp .text .post-box-title,
+.post_list .post-box-img-wrapp .text .post-box-date,
+.recent-post-single .recent-title,
+.contact-info .details h5,
+.pagination.cs-pager .page-numbers.next:after,
+.pagination.cs-pager .page-numbers.prev:after,
+.widget_search input[type="text"],
+.widget_search input[type="submit"]:hover,
+.sidebar-item ul li a,
+.protected-page .protected-title,
+.protected-page form,
+.protected-page input[type="password"]:focus,
+.protected-page input[type="submit"],
+.comments .content .comment-reply-link:hover,
+.comments .content .text,
+#contactform h3,
+.comments-form h3,
+.post-info span.author,
+.post-info span.author a,
+.post-nav a:hover,
+.post-nav a:focus,
+.page-numbers:hover,
+.page-numbers:focus,
+.next.page-numbers,
+.prev.page-numbers,
+.next.page-numbers:hover,
+.prev.page-numbers:hover,
+.post-nav .pages,
+.post-nav .current,
+.pager-pagination .pages,
+.pager-pagination .current,
+.woocommerce .whizz_product_detail div.product p.price,
+.woocommerce .single-product div.product p.price,
+.woocommerce .whizz_product_detail div.product span.price,
+.woocommerce .single-product div.product span.price,
+.woocommerce ul.products.default li.product .price,
+.whizz_cart.shop_table ul .cart_item ul .product-price,
+.whizz_cart.shop_table ul .cart_item ul .product-subtotal,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_price,
+.woocommerce table.shop_table .cart_item .product-total,
+.woocommerce .whizz_product_detail div.product p.price ins,
+.woocommerce .single-product div.product p.price ins,
+.woocommerce .whizz_product_detail div.product span.price ins,
+.woocommerce .single-product div.product span.price ins,
+.woocommerce ul.products.default li.product .price ins,
+.whizz_cart.shop_table ul .cart_item ul .product-price ins,
+.whizz_cart.shop_table ul .cart_item ul .product-subtotal ins,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_price ins,
+.woocommerce table.shop_table .cart_item .product-total ins,
+.woocommerce .single-product .star-rating,
+.woocommerce .whizz_product_detail .star-rating,
+.woocommerce .quantity .qty,
+.single-product .product .summary .product_title,
+.whizz_product_detail .product .summary .product_title,
+.single-product .product .summary .cart .variations .label label,
+.whizz_product_detail .product .summary .cart .variations .label label,
+.single-product .product .summary .cart .variations .value ul li label,
+.whizz_product_detail .product .summary .cart .variations .value ul li label,
+.single-product div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,
+.whizz_product_detail div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,
+.single-product div.product .woocommerce-tabs .woocommerce-Tabs-panel h2,
+.whizz_product_detail div.product .woocommerce-tabs .woocommerce-Tabs-panel h2,
+.single-product .product #reviews #comments .commentlist .comment .comment-text .meta,
+.whizz_product_detail .product #reviews #comments .commentlist .comment .comment-text .meta,
+.single-product .product .woocommerce-Reviews #review_form_wrapper .comment-reply-title,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper .comment-reply-title,
+.single-product div.product .up-sells h2,
+.whizz_product_detail div.product .up-sells h2,
+.single-product .product .related.products h2,
+.whizz_product_detail .product .related.products h2,
+.woocommerce ul.products li.product h3,
+.whizz-woocommerce-pagination .nav-links a::before,
+.mini-cart-wrapper .whizz-shop-icon:before,
+.mini-cart-wrapper .whizz-shop-icon .cart-contents-count,
+.whizz_cart.shop_table .heading li,
+.whizz_cart.shop_table ul .cart_item ul .product-name a,
+.whizz_cart.shop_table ul .cart_item ul .product-name .variation dt,
+.whizz_cart.shop_table .complement-cart .coupon .input-text:focus,
+.whizz-cart-collaterals .cart_totals h2,
+.woocommerce form.checkout_coupon .form-row input.input-text,
+.woocommerce form.checkout h3,
+.woocommerce form.login .form-row label,
+.woocommerce form.checkout .form-row label,
+.woocommerce form.login .form-row input,
+.woocommerce form.login .form-row textarea,
+.woocommerce form.checkout .form-row input,
+.woocommerce form.checkout .form-row textarea,
+.woocommerce form.login .form-row input:focus,
+.woocommerce form.login .form-row textarea:focus,
+.woocommerce form.checkout .form-row input:focus,
+.woocommerce form.checkout .form-row textarea:focus,
+.woocommerce form.checkout_coupon .form-row input.input-text:focus,
+.woocommerce form.login .lost_password a,
+.select2-drop-active,
+.select2-results li.select2-highlighted,
+.woocommerce table.shop_table thead .product-name,
+.woocommerce table.shop_table thead .product-total,
+.woocommerce table.shop_table .cart_item .product-name,
+.woocommerce table.shop_table .cart_item .product-name .variation dt,
+.woocommerce-checkout-review-order #payment div.payment_box,
+.portfolio-single-content .portfolio-title,
+.portfolio-single-content .whizz-portfolio-footer-line .portfolio-client .client-title,
+.portfolio-single-content .whizz-portfolio-footer-line .portfolio-jop-type .title-job-type,
+.portfolio-single-content .whizz-portfolio-footer-line .title-date,
+.pricing-info .title,
+.iframe-video-title,
+.coming-page-wrapper .title,
+.swipe-btn::before,
+.skill-wrapper .main-title,
+.flipto::before,
+.portfolio-wrapper .pager-pagination a,
+.portfolio-wrapper .pager-pagination span,
+.fancybox-infobar .fancybox-button::before,
+.popup-content-details .img-title,
+.popup-content-details .caption-images-portfolio-item span,
+.news.type-1 .news-type,
+.news.type-1 .news-likes,
+.news.type-1 .news-likes a,
+.news h4 a,
+.news .news-date,
+code,
+kbd,
+caption,
+a,
+a:hover,
+a:focus,
+.a-btn.style-black,
+.portfolio.grid .post-wrapper .item-portfolio-content .portfolio-title,
+.portfolio.grid .post-wrapper .item-portfolio-content .excerpt p,
+.portfolio.grid .item-portfolio-content .portfolio-title,
+.filter ul li.active,
+.team-member-wrap.default .team-member .social .wrap a,
+.team-member-wrap.default .info .title,
+.team-member .info .title,
+.simple .post-box .text .post-box-title,
+.services .content .title,
+.single-post .single-content blockquote p,
+.single-post .single-content .swiper-container .description,
+.single-post .single-content .swiper-arrow-right,
+.single-post .single-content .swiper-arrow-left,
+.sm-wrap-post .content .title,
+.contact-form .title,
+form.wpcf7-form input,
+form.wpcf7-form textarea,
+.wpcf7 form input:focus,
+form.wpcf7-form input:focus,
+form.wpcf7-form textarea:focus,
+#footer.white-footer .copyright a,
+#footer.white-footer .social-links a,
+#footer.white-footer .ContactWidget h3,
+#footer.white-footer .ContactWidget div.contact_content,
+#footer.white-footer .ContactWidget .contact_url,
+#footer.white-footer .whizzInstagramWidget,
+#footer.white-footer .ContactWidget a.fa,
+#footer.white-footer .widget_text h5,
+#footer.white-footer .widget_text .textwidget > p,
+#footer.white-footer .widget_text .wpcf7-response-output,
+#footer.white-footer .widget_text form input:not([type="submit"]),
+#footer.white-footer .widget_text form::after,
+.single-content.no-thumb .main-top-content .title,
+.comments .content .comment-reply-link,
+.comments .comment-reply-title,
+.comments .person .author,
+.comments-title,
+.comments-title span,
+#contactform textarea,
+#contactform input:not([type="submit"]),
+.comments-form textarea,
+.comments-form input:not([type="submit"]),
+.about-details .content .text h1,
+.about-details .content .text h2,
+.about-details .content .text h3,
+.about-details .content .text h4,
+.about-details .content .text h5,
+.about-details .content .text h6,
+.about-details .content .title,
+.simple-details .content .title,
+.about-details .content .text blockquote p,
+.titles .title,
+.portfolio-single-content,
+.single-pagination > div a.content::before,
+.albums-left-filter .button-group button:hover,
+.albums-left-filter .button-group button.is-checked,
+.portfolio-slider-wrapper .portfolio-title,
+.portfolio-pagination::before,
+.twitter-wrapper .name,
+.twitter-wrapper .description,
+.post-list .pager-pagination .page-numbers.next::before,
+.post-list .pager-pagination .page-numbers.prev::before,
+.pricing-gallery .images.content .title,
+.pricing-gallery .images.content .price,
+.pricing-gallery .images.content .description,
+.events-single-content.protected-page form,
+.single-portfolio .protected-page form,
+.single-product .product #reviews #comments .commentlist .comment .comment-text .date_publish,
+.whizz_product_detail .product #reviews #comments .commentlist .comment .comment-text .date_publish,
+.whizz-cart-collaterals .cart_totals .shop_table ul li span,
+.woocommerce table.shop_table .woocommerce-Price-amount,
+.portfolio-single-content .portfolio-categories a,
+.pricing-info .subtitle,
+.coming-soon-descr li,
+.swipe-btn:hover::before,
+.flipto:hover::before,
+.fancybox-infobar .fancybox-button:hover::before,
+.news.type-1 .news-type:hover,
+form.wpcf7-form label,
+.contacts-info-wrap.style2 .title-main,
+.contacts-info-wrap .title,
+.contacts-info-wrap .content-item a:hover,
+.exhibition-wrap .btn:hover,
+.exhibition-wrap .btn--toggle.btn--active:hover,
+.flow-slider .swiper-arrow-left::before,
+.flow-slider .swiper-arrow-right::before,
+.info-block-parallax-wrap .content-wrap blockquote,
+.info-block-parallax-wrap .content-wrap blockquote p,
+.insta-box .insta-box-follow,
+.insta-box .insta-box-follow a,
+.tax-portfolio-client .client-content .title,
+.tax-portfolio-client .client-content .descr,
+.single-content.modern h1,
+.single-content.modern h2,
+.single-content.modern h3,
+.single-content.modern h4,
+.single-content.modern h5,
+.single-content.modern h6,
+.single-content.modern blockquote div,
+.single-content.modern blockquote p,
+.col-md-3 .ContactWidget .contact_url,
+.col-md-3 .ContactWidget div.contact_content,
+.col-md-3 .ContactWidget a.fa,
+.col-md-3 .whizzInstagramWidget,
+.events-single-content .info-event-wrap .info-item .info a:hover,
+.single-proof_gallery .pixproof-data .grid__item .entry__meta-box .meta-box__title,
+.text-dark p,
+.contact-info,
+.swiper-container-split .swiper-slide .slide-item.slide-text,
+.fragment-wrapper .fragment-block .fragment-text .wrap-frag-text,
+.fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .desc mark,
+.fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more,
+.monospace,
+blockquote cite,
+#back-to-top {
+    color: #1B1B1B;
+}
+
+::-moz-selection {
+    background: #1B1B1B;
+}
+
+::selection {
+    background: #1B1B1B;
+}
+
+::-moz-selection {
+    background: #1B1B1B;
+}
+
+.black,
+.highlight,
+.side-arrow:before,
+.side-arrow:after,
+.flex-control-paging li a.flex-active,
+.banner-list li,
+.ri-grid ul li,
+.portfolio.classic.big .item-link,
+.portfolio.masonry .item-overlay,
+.portfolio.masonry .item-link:hover .item-overlay,
+.portfolio.grid .item-overlay,
+.portfolio.grid .item-link:hover .item-overlay,
+.toggle-title:after,
+.pagination a.img,
+.woocommerce ul.products li.product .whizz-prod-list-image:after,
+.fullview__image,
+.main-album-anim-wrap,
+.client-wrap .client-link:hover .client-overlay,
+.bottom-line:after,
+.a-btn-2,
+#footer,
+.header_trans-fixed.header_top_bg.bg-fixed-color,
+.portfolio-wrapper .load-more.button,
+.row.simple::-webkit-scrollbar-thumb,
+.single-post .single-content .swiper-arrow-left div::before,
+.wpcf7 form input[type="submit"],
+form.wpcf7-form #submit,
+#contactform #submit,
+.comments-form #submit,
+.post-info span a,
+.single-pagination > div a.content::after,
+.skill-wrapper .skill .line .active-line,
+.skill-wrapper .skill .label-skill,
+.portfolio-pagination::after,
+.post-list .pager-pagination .page-numbers.next::after,
+.post-list .pager-pagination .page-numbers.prev::after,
+.portfolio-slider-wrapper.slider_classic .pagination .swiper-pagination-switch,
+.post .post-wrap-item.text,
+.widget_search input[type="submit"],
+.protected-page input[type="submit"],
+.post-nav a,
+.page,
+.page-numbers:not(.next, .prev),
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit],
+.woocommerce-page.woocommerce-cart .woocommerce input.button,
+.woocommerce-page.woocommerce-checkout .woocommerce input.button,
+.woocommerce-page.woocommerce-cart a.button,
+.woocommerce-page.woocommerce-checkout a.button,
+.woocommerce-page.woocommerce a.button,
+.woocommerce-page.woocommerce button.button.alt,
+.woocommerce button.button.alt,
+a.button.checkout,
+.woocommerce-page.woocommerce-cart a.button:hover,
+.woocommerce-page.woocommerce-checkout a.button:hover,
+.woocommerce-page.woocommerce a.button:hover,
+.woocommerce-page.woocommerce button.button.alt:hover,
+.woocommerce button.button.alt:hover,
+a.button.checkout:hover,
+.woocommerce .whizz_images span.onsale,
+.woocommerce ul.products li.product .whizz-prod-list-image .onsale,
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error,
+.single-product .product .summary .cart .variations .value ul li input:checked + label:before,
+.whizz_product_detail .product .summary .cart .variations .value ul li input:checked + label:before,
+.single-product .product .woocommerce-Reviews #review_form_wrapper .comment-form .form-submit input#submit,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper .comment-form .form-submit input#submit,
+.woocommerce ul.products li.product .whizz_product_list_name .count,
+.whizz-woocommerce-pagination .nav-links a::after,
+.whizz_mini_cart,
+#topmenu .whizz_mini_cart a.button,
+.woocommerce form.login .form-row input[type="checkbox"]:checked + label.checkbox:before,
+.woocommerce form.checkout .form-row input[type="checkbox"]:checked + label.checkbox:before,
+.flow-slider .swiper-arrow-left::after,
+.flow-slider .swiper-arrow-right::after,
+.contacts-info-wrap.style4 .additional-content-wrap,
+.insta-box .insta-img-wrap,
+.tax-portfolio-client .client-content .title::before,
+.single-content.modern .content-header .title::before,
+.events-single-content .end-event,
+.item .item-img .end-event,
+.single-proof_gallery #pixproof_gallery .proof-photo.selected .meta__action.select-action,
+.ri-grid ul li a,
+#multiscroll-nav li .active span,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2:hover,
+.woocommerce-page.woocommerce-cart a.button:hover,
+.woocommerce-page.woocommerce-checkout a.button:hover,
+.woocommerce-page.woocommerce a.button:hover,
+.woocommerce-page.woocommerce button.button.alt:hover,
+.woocommerce button.button.alt:hover,
+a.button.checkout:hover,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2:hover,
+.post a {
+    background-color: #1B1B1B;
+}
+
+.a-btn.style-black,
+#contactform textarea,
+#contactform input:not([type="submit"]),
+.comments-form textarea,
+.comments-form input:not([type="submit"]),
+#contactform textarea:focus,
+#contactform input:focus,
+.comments-form textarea:focus,
+.comments-form input:focus,
+.widget_search input[type="text"],
+.widget_search input[type="submit"],
+.widget_tag_cloud .tagcloud a,
+.single-product div.product .woocommerce-tabs ul.tabs.wc-tabs li.active,
+.whizz_product_detail div.product .woocommerce-tabs ul.tabs.wc-tabs li.active,
+.whizz_cart.shop_table .complement-cart .coupon .input-text:focus,
+.woocommerce form.login .form-row input:focus,
+.woocommerce form.login .form-row textarea:focus,
+.woocommerce form.checkout .form-row input:focus,
+.woocommerce form.checkout .form-row textarea:focus,
+.woocommerce form.checkout_coupon .form-row input.input-text:focus,
+.select2-drop-active,
+form.wpcf7-form input:not([type="submit"]),
+form.wpcf7-form textarea,
+.contacts-info-wrap .content-item div,
+.contacts-info-wrap .form input:not([type="submit"]):focus,
+.contacts-info-wrap .form textarea:focus,
+.events-single-content .info-event-wrap,
+.fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more,
+.content__link::after {
+    border-bottom: 1px solid #1B1B1B;
+}
+
+.rsArrowLeft .rsArrowIcn {
+    border-left: 2px solid #1B1B1B;
+}
+
+.a-btn.style-black::after,
+.swiper-container-split .swiper-slide .slide-item.slide-text .slide-text-more::after,
+.fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more::after {
+    border-left: 4px solid #1B1B1B;
+}
+
+.flex-control-paging li,
+#multiscroll-nav span,
+.swiper-container-split .swiper-slide .slide-item.slide-text .slide-text-more,
+.insta-box .insta-box-follow a,
+.single-proof_gallery #pixproof_gallery .proof-photo.selected .meta__action.select-action {
+    border: 1px solid #1B1B1B;
+}
+
+#footer.white-footer .widget_text form input[type="submit"],
+.protected-page input[type="password"] {
+    border: 2px solid #1B1B1B;
+}
+
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2 {
+    border-bottom: 2px solid #1B1B1B;
+}
+
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2,
+.single-proof_gallery .pixproof-data .grid__item .a-btn-2 {
+    border-top: 2px solid #1B1B1B;
+}
+
+.post-nav a,
+.pages,
+.page-numbers:not(.next, .prev),
+.single-content.modern .main-template-content,
+.events-single-content .info-event-wrap {
+    border-top: 1px solid #1B1B1B;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+    border-color: #1B1B1B;
+}
+
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error {
+    border-top: 4px solid #1B1B1B;
+}
+
+/* ======================== 2b2b2b ======================== */
+
+form.wpcf7-form input::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form input::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form input::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form input::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form input:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form input:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form input:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form input:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form textarea::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form textarea::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form textarea::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form textarea::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form textarea:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form textarea:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+form.wpcf7-form textarea:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+.wpcf7 form textarea:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+.protected-page input[type="password"]::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+.protected-page input[type="password"]::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+.protected-page input[type="password"]:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+.protected-page input[type="password"]:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+#contactform textarea::-moz-placeholder,
+#contactform input::-moz-placeholder,
+.comments-form textarea::-moz-placeholder,
+.comments-form input::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+#contactform textarea::-webkit-input-placeholder,
+#contactform input::-webkit-input-placeholder,
+.comments-form textarea::-webkit-input-placeholder,
+.comments-form input::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+#contactform textarea:-moz-placeholder,
+#contactform input:-moz-placeholder,
+.comments-form textarea:-moz-placeholder,
+.comments-form input:-moz-placeholder {
+    color: #B2B2B2;
+}
+
+#contactform textarea:-ms-input-placeholder,
+#contactform input:-ms-input-placeholder,
+.comments-form textarea:-ms-input-placeholder,
+.comments-form input:-ms-input-placeholder {
+    color: #B2B2B2;
+}
+
+.about-section .descr,
+.banner-gallery .content-wrap .description,
+.top-banner.left_content .subtitle,
+.category,
+.contact-info .details a,
+.contact-info .details h6,
+.portfolio.grid .post-wrapper .item-portfolio-content .date,
+.lg .lg-sub-html .dgwt-jg-item-desc,
+.filter ul li,
+.team-member-wrap.default .info .position,
+.team-member .info .position,
+.simple .post-box .text .post-box-date,
+.simple .post-box .text .post-box-desc,
+.simple .post-box .text .post-box-desc p,
+.services .content .text,
+.single-post p,
+.sm-wrap-post .content .excerpt,
+.sm-wrap-post .content .post-date .date,
+#footer .copyright,
+.comments .person .comment-date,
+.post-info span a,
+.post-info span,
+.about-details.style1 .content .text,
+.about-details .content .subtitle,
+.simple-details .content .subtitle,
+.titles .subtitle,
+.single-pagination > div a.content,
+.skill-wrapper .skill .value,
+.thumb-slider-wrapp .thumb-slider-wrapp-arrow .hide-images,
+.thumb-slider-wrapp .thumb-slider-wrapp-arrow .show-images,
+.albums-left-filter .button-group button,
+.twitter-wrapper .slug,
+.post-list .pager-pagination .page-numbers.next,
+.post-list .pager-pagination .page-numbers.prev,
+.pricing-gallery .images.content .subtitle,
+.protected-page input[type="password"],
+.single-product .product .summary .woocommerce-product-rating .woocommerce-review-link,
+.whizz_product_detail .product .summary .woocommerce-product-rating .woocommerce-review-link,
+.single-product .product .summary .product_desc p,
+.whizz_product_detail .product .summary .product_desc p,
+.single-product .product .summary .product_meta a,
+.whizz_product_detail .product .summary .product_meta a,
+.single-product .product .summary .product_meta,
+.whizz_product_detail .product .summary .product_meta,
+.single-product div.product .woocommerce-tabs ul.tabs.wc-tabs li a,
+.whizz_product_detail div.product .woocommerce-tabs ul.tabs.wc-tabs li a,
+.single-product div.product .woocommerce-tabs .woocommerce-Tabs-panel p,
+.whizz_product_detail div.product .woocommerce-tabs .woocommerce-Tabs-panel p,
+.single-product .product #reviews #comments .commentlist .comment .comment-text .description,
+.whizz_product_detail .product #reviews #comments .commentlist .comment .comment-text .description,
+.single-product .product .woocommerce-Reviews #review_form_wrapper .comment-form-rating label,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper .comment-form-rating label,
+.single-proof_gallery .pixproof-data .grid__item .entry__meta-box span,
+.single-product .product .woocommerce-Reviews #review_form_wrapper input,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper input,
+.single-product .product .woocommerce-Reviews #review_form_wrapper textarea,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper textarea,
+.woocommerce ul.products li.product,
+.woocommerce ul.products li.product .category-product a,
+.whizz-woocommerce-pagination .nav-links .nav-previous a,
+.whizz-woocommerce-pagination .nav-links .nav-next a,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_quantity,
+.whizz_cart.shop_table .complement-cart .coupon .input-text,
+.whizz-cart-collaterals .cart_totals .shop_table ul li,
+.select2-container .select2-choice,
+.select2-search:after,
+.select2-search input,
+.select2-results li,
+.woocommerce table.shop_table .cart_item .product-name .variation dd p,
+.woocommerce table.shop_table .cart-subtotal th,
+.woocommerce table.shop_table .order-total th,
+.woocommerce-checkout-review-order #payment .payment_methods.methods li,
+.woocommerce-checkout-review-order #payment .payment_methods.methods li label,
+.woocommerce-checkout-review-order #payment .payment_methods.methods li .about_paypal,
+.portfolio-single-content p,
+.portfolio-single-content .whizz-portfolio-footer-line .portfolio-client .client-value,
+.portfolio-single-content .whizz-portfolio-footer-line .portfolio-jop-type .job-type-value,
+.portfolio-single-content .whizz-portfolio-footer-line .date-value,
+.portfolio-single-content .whizz-portfolio-footer-line .social-list a,
+.pricing-info .pricing-list ul li,
+.coming-page-wrapper .subtitle,
+.popup-content-details .img-date,
+.popup-content-details .caption-images-portfolio-item p,
+.contacts-info-wrap.style2 .text,
+.contacts-info-wrap .content-item div,
+.contacts-info-wrap .content-item a,
+.flow-slider .flow-title,
+.wpb_text_column p,
+.info-block-parallax-wrap .content-wrap p,
+.single-content.modern .content-header .description,
+.events-single-content .info-event-wrap .info-item .info,
+.events-single-content .info-event-wrap .info-item .info a,
+.events-single-content .content-main p,
+.single-proof_gallery .pixproof-data .grid__item .entry__meta-box span,
+.single-post dl dd,
+.comments dl dd,
+.text-light .monospace,
+.single-proof_gallery .pixproof-data .grid__item .entry__meta-box .meta-box__title,
+.single-product .product .summary .product_meta a,
+.whizz-woocommerce-pagination .nav-links .nav-previous a:hover,
+.whizz-woocommerce-pagination .nav-links .nav-next a:hover,
+.news.type-1 .news-likes a:hover,
+.single-proof_gallery .pixproof-data .grid__item .entry__meta-box .meta-box__title,
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error,
+.woocommerce .woocommerce-message:before,
+.woocommerce .woocommerce-info:before,
+.woocommerce .woocommerce-error:before,
+.woocommerce .whizz_product_detail div.product p.price del,
+.woocommerce .single-product div.product p.price del,
+.woocommerce .whizz_product_detail div.product span.price del,
+.woocommerce .single-product div.product span.price del,
+.woocommerce ul.products.default li.product .price del,
+.whizz_cart.shop_table ul .cart_item ul .product-price del,
+.whizz_cart.shop_table ul .cart_item ul .product-subtotal del,
+#topmenu .whizz_mini_cart .product_list_widget .mini_cart_item .mini-cart-data .mini_cart_item_price del,
+.woocommerce table.shop_table .cart_item .product-total del,
+.woocommerce .single-product .star-rating:before,
+.woocommerce .whizz_product_detail .star-rating:before,
+.single-product .product .summary .cart .variations .value ul li p,
+.whizz_product_detail .product .summary .cart .variations .value ul li p,
+.whizz_cart.shop_table ul .cart_item ul .product-name .variation dd p,
+.portfolio-wrapper .pager-pagination .current,
+.outer-album-swiper .album-text-desc {
+    color: #B2B2B2;
+}
+
+.grey,
+.contacts-info-wrap .form input:not([type="submit"]),
+.contacts-info-wrap .form textarea,
+.category::before,
+.team-member-wrap.default .team-member::before,
+.services::after,
+.skill-wrapper .skill .line,
+.twitter-wrapper span::after,
+.about-section,
+.contact-info,
+.about-details-section,
+.coming-soon-wrap .coming-soon-descr,
+.swipe-btn,
+.popup-content-details .img-date::before,
+.news-entry .news,
+.iframe-video.audio,
+.post-info span.author,
+code,
+.single-product .product .summary .cart .variations .value ul li label:before,
+.whizz_product_detail .product .summary .cart .variations .value ul li label:before,
+.woocommerce form.login .form-row input:-webkit-autofill,
+.woocommerce form.checkout .form-row input:-webkit-autofill,
+.woocommerce form.login .form-row input:-webkit-autofill:hover,
+.woocommerce form.checkout .form-row input:-webkit-autofill:hover,
+.woocommerce form.login .form-row input:-webkit-autofill:focus,
+.woocommerce form.checkout .form-row input:-webkit-autofill:focus,
+.woocommerce form.login .form-row label.checkbox:before,
+.woocommerce form.checkout .form-row label.checkbox:before,
+.exhibition-wrap .room__side--back,
+.flipto,
+.fancybox-infobar .fancybox-button,
+.fancybox-infobar .fancybox-button:hover,
+.fancybox-infobar .fancybox-button::before,
+.twitter-slider .flipster-carousel .flip-content,
+.contacts-info-wrap.style2.over::before,
+.kenburns-play,
+#back-to-top,
+#back-to-top:hover,
+.stripped-wrapper .stripped-link .image-wrapper,
+.fragment-wrapper .fragment-block .fragment-img,
+.exhibition-wrap,
+.exhibition-wrap .room__side--left,
+.exhibition-wrap .room__side--right,
+.exhibition-wrap .room__side--bottom {
+    background-color: #B2B2B2;
+}
+
+.coming-soon .svg .svgRect {
+    fill: #B2B2B2;
+}
+
+.row.simple {
+    border-right: 2px solid #B2B2B2;
+}
+
+.post-info span {
+    border-right: 1px solid #B2B2B2;
+}
+
+.single-post .single-content .swiper-container,
+.single-product .product .woocommerce-Reviews #review_form_wrapper input,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper input,
+.single-product .product .woocommerce-Reviews #review_form_wrapper textarea,
+.whizz_product_detail .product .woocommerce-Reviews #review_form_wrapper textarea,
+.whizz_cart.shop_table .complement-cart .coupon .input-text,
+.woocommerce form.checkout_coupon .form-row input.input-text,
+.woocommerce form.login .form-row input,
+.woocommerce form.login .form-row textarea,
+.woocommerce form.checkout .form-row input,
+.woocommerce form.checkout .form-row textarea,
+.select2-container .select2-choice,
+.select2-container.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-search input,
+.single-product .product .woocommerce-tabs .tabs.wc-tabs:before,
+.whizz_product_detail .product .woocommerce-tabs .tabs.wc-tabs:before,
+.whizz_cart.shop_table .heading,
+.whizz_cart.shop_table .complement-cart,
+.woocommerce table.shop_table thead,
+.woocommerce table.shop_table tfoot {
+    border-bottom: 1px solid #B2B2B2;
+}
+
+form.wpcf7-form input:not([type="submit"]),
+form.wpcf7-form textarea,
+.events-single-content.protected-page input[type="password"],
+.single-portfolio .protected-page input[type="password"],
+.events-single-content.protected-page input[type="password"]:focus,
+.single-portfolio .protected-page input[type="password"]:focus,
+.protected-page input[type="password"]:focus {
+    border-bottom: 2px solid #B2B2B2;
+}
+
+.comment-title {
+    border-bottom: 1px dashed #B2B2B2;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #B2B2B2;
+}
+
+.single-product .product .summary .cart .variations .value fieldset,
+.whizz_product_detail .product .summary .cart .variations .value fieldset,
+.woocommerce form.checkout_coupon,
+.woocommerce form.login,
+.portfolio-single-content .whizz-portfolio-footer-line {
+    border-bottom: 4px solid #B2B2B2;
+}
+
+.sidebar-item input,
+.empty-post-list input[type=search],
+table,
+th,
+td,
+.contacts-info-wrap .form input:not([type="submit"]),
+.contacts-info-wrap .form textarea,
+.single-proof_gallery #pixproof_gallery .proof-photo .meta__action.select-action {
+    border: 1px solid #B2B2B2;
+}
+
+.woocommerce .quantity .qty {
+    border: 2px solid #B2B2B2;
+}
+
+.woocommerce table.shop_table tfoot {
+    border-top: 1px solid #B2B2B2;
+}
+
+.single-product .product .summary .cart .variations .value fieldset,
+.whizz_product_detail .product .summary .cart .variations .value fieldset,
+.portfolio-single-content .whizz-portfolio-footer-line {
+    border-top: 4px solid #B2B2B2;
+}
+
+/* =====  MEDIA  === */
+
+@media (min-width: 768px) {
+    #topmenu ul ul,
+    header:not(.aside-menu) #topmenu ul li.mega-menu:hover > ul::before {
+        background-color: #1B1B1B;
+    }
+
+    #topmenu ul ul li a,
+    #topmenu ul ul li.current-menu-item > a {
+        color: #ffffff;
+    }
+
+    #topmenu .f-right > div:first-child::before,
+    .right-menu .f-right > div:first-child::before {
+        background-color: #B2B2B2;
+    }
+
+    #topmenu .whizz-top-social .social,
+    .aside-menu .topmenu,
+    .aside-menu #topmenu::after {
+        background-color: #ffffff;
+    }
+
+    .aside-menu .aside-nav {
+        background-color: #B2B2B2;
+    }
+
+    .aside-menu .aside-nav .aside-nav-line {
+        background-color: #1B1B1B;
+    }
+
+    .aside-menu #topmenu {
+        border-right: 1px solid #B2B2B2;
+    }
+
+    .aside-menu #topmenu ul > li > ul > li > ul {
+        border-top: 1px solid #B2B2B2;
+        border-bottom: 1px solid #B2B2B2;
+    }
+
+    header:not(.aside-menu) #topmenu ul li.mega-menu > ul > li::before {
+        background-color: #1B1B1B;
+    }
+}
+
+@media (max-width: 767px) {
+    #topmenu > ul.menu > li > ul > li,
+    #topmenu > ul.menu > li > ul > li > ul > li {
+        border: 1px solid #B2B2B2;
+    }
+
+    .header_trans-fixed.open .right-menu #topmenu .whizz-top-social .social li a,
+    .all-posts-descr h6 {
+        color: #1B1B1B;
+    }
+
+    .banner-gallery::before {
+        background-color: #B2B2B2;
+    }
+}
+
+@media (max-width: 991px) {
+    .all-posts-descr h5 {
+        color: #1B1B1B;
+    }
+
+    .all-posts-descr p {
+        color: #B2B2B2;
+    }
+
+    .popup-content-details {
+        background-color: #ffffff;
+    }
+
+    .swiper-container-split .swiper-slide .slide-item.slide-img:before,
+    .fragment-wrapper .fragment-block .fragment-img:before {
+        background-color: #1B1B1B;
+    }
+
+    .swiper-container-split .swiper-slide .slide-item.slide-text,
+    .swiper-container-split .swiper-slide .slide-item.slide-text .slide-text-more,
+    .swiper-container-split .swiper-slide .slide-item.slide-text .subtitle a,
+    .fragment-wrapper .fragment-block .fragment-text .wrap-frag-text,
+    .fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .desc mark,
+    .fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more {
+        color: #ffffff;
+    }
+
+    .swiper-container-split .swiper-slide .slide-item.slide-text .slide-text-more,
+    .fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more {
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .swiper-container-split .swiper-slide .slide-item.slide-text .slide-text-more::after,
+    .fragment-wrapper .fragment-block .fragment-text .wrap-frag-text .slide-text-more::after {
+        border-left: 4px solid #ffffff;
+    }
+
+    .contacts-info-wrap.style2 .content-wrap {
+        border-bottom: 1px solid #1B1B1B;
+    }
+}
