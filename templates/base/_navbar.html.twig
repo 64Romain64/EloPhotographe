@@ -23,7 +23,7 @@
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                 <a href="#">PROFESSIONNEL</a>
                 <ul class="sub-menu">
-                {% for categorie in categories %}
+                {% for categorie in categorieNavBar() %}
                     {% if categorie.titre == "Professionnel" %}
                         <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos {{categorie.nom}}</a></li>
                         {# <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Photos {{categorie.nom}}</a></li> #}
@@ -34,22 +34,22 @@
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                 <a href="#">PHOTOGRAPHIE D'ART</a>
                 <ul class="sub-menu">
-                    {% for categorie in categories %}
+                    {% for categorie in categorieNavBar() %}
                         {% if categorie.titre == "Art" %}
                         <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos {{categorie.nom}}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
             </li>
-            {# <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li> #}
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('visites')}}">Visites Virtuelles</a></li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="{{path ('about')}}">ABOUT</a></li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('contact')}}">CONTACT</a></li>
-            {% if app.user %}
+            {# {% if app.user %}
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
             {% else %}
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
-            {% endif %}
+            {% endif %} #}
             {# <li
                 <a href="#">SHOP</a>
                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
