@@ -2,9 +2,11 @@
 
 namespace App\Repository;
 
+use App\Entity\Photo;
 use App\Entity\Projet;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Categorie;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Projet|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,32 +21,34 @@ class ProjetRepository extends ServiceEntityRepository
         parent::__construct($registry, Projet::class);
     }
 
-    // /**
-    //  * @return Projet[] Returns an array of Projet objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findAllPortfolio(Categorie $categorie):array
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        ->where(':categorie MEMBER OF p.categorie')
+        ->andWhere('p.statut = 0')
+        ->setParameter('categorie', $categorie)
+        ->getQuery()
+        ->getResult();
     }
-    */
+    
+    public function findAllActualite(Categorie $categorie):array
+    {
+        return $this->createQueryBuilder('p')
+        ->where(':categorie MEMBER OF p.categorie')
+        ->andWhere('p.statut = 1')
+        ->setParameter('categorie', $categorie)
+        ->getQuery()
+        ->getResult();
+    }
 
-    /*
-    public function findOneBySomeField($value): ?Projet
+    public function findAllArchive(Categorie $categorie):array
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        ->where(':categorie MEMBER OF p.categorie')
+        ->andWhere('p.statut = 2')
+        ->setParameter('categorie', $categorie)
+        ->getQuery()
+        ->getResult();
     }
-    */
+
 }

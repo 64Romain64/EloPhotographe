@@ -23,21 +23,22 @@
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                 <a href="#">PROFESSIONNEL</a>
                 <ul class="sub-menu">
-                    <li class="menu-item"><a href="{{path('objet')}}">Photos d'objet</a></li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-two.html">Photos Immobilières</a></li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-three.html">Reportage d'entreprise</a></li>
-                    <li class="menu-item"><a href="blog-style-four.html">Photos industrielles</a></li>
-                    <li class="menu-item"><a href="blog-style-five.html">Visites virtuelles</a></li>
+                {% for categorie in categories %}
+                    {% if categorie.titre == "Professionnel" %}
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos {{categorie.nom}}</a></li>
+                        {# <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Photos {{categorie.nom}}</a></li> #}
+                    {% endif %}
+                {% endfor %}
                 </ul>
             </li>
             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                 <a href="#">PHOTOGRAPHIE D'ART</a>
                 <ul class="sub-menu">
-                    <li class="menu-item"><a href="blog.html">Paysage</a></li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-two.html">Street / Urbain</a></li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-three.html">City</a></li>
-                    <li class="menu-item"><a href="blog-style-four.html">Grpahique / Créatif</a></li>
-                    <li class="menu-item"><a href="blog-style-five.html">MacroPhotographie</a></li>
+                    {% for categorie in categories %}
+                        {% if categorie.titre == "Art" %}
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos {{categorie.nom}}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </li>
             {# <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li> #}

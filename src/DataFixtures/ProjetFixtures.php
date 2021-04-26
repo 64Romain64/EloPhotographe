@@ -54,16 +54,19 @@ class ProjetFixtures extends Fixture
 
         // ------------------------ CATEGORIES ------------------------//
         $cat1 = new Categorie();
-        $cat1->setNom('Océan');
-        $cat1->setSlug('/ocean');
+        $cat1->setTitre("Professionnel");
+        $cat1->setNom('Objet');
+        $cat1->setSlug('objet');
 
         $cat2 = new Categorie();
-        $cat2->setNom('Montagne');
-        $cat2->setSlug('montagne');
+        $cat2->setTitre("Art");
+        $cat2->setNom('Paysage');
+        $cat2->setSlug('paysage');
     
         $cat3 = new Categorie();
-        $cat3->setNom('Campagne');
-        $cat3->setSlug('/campagne');
+        $cat3->setTitre("Professionnel");
+        $cat3->setNom('Immobilier');
+        $cat3->setSlug('immobilier');
         
         $manager->persist($cat1);
         $manager->persist($cat2);
@@ -78,26 +81,41 @@ class ProjetFixtures extends Fixture
             $proj1->setDescription("je ne sais pas");
             $proj1->setSlug("a_la_plage_" . $i);
             $proj1->setDate(new DateTime());
-            $proj1->setStatut("1");
+            $proj1->setStatut(1);
             $proj1->setUser($admin);
             $proj1->addCategorie($cat1);
 
 
-            for ($j = 1; $j <= 3; $j++) {
-                $ph1 = new Photo();
-                $ph1->setNom('La plage_' . $j);
-                $ph1->setDescription("lorem ipsum blabla");
-                $ph1->setSlug("laplage_" . $j);
-                $ph1->setFile("img{$j}.jpg");
-                $ph1->setEnVente('true');
-                $ph1->setLargeur(25, 50);
-                $ph1->setHauteur(25, 50);
-                $ph1->setPrix(30, 00);
-                $ph1->setCadre("bois d'arbre");
-                $ph1->setEtat("1");
-                $ph1->setProjet($proj1);
+            $ph1 = new Photo();
+            $ph1->setNom('La plage_' . $i);
+            $ph1->setDescription("lorem ipsum blabla");
+            $ph1->setSlug("laplage_" . $i);
+            $ph1->setFile("img{$i}.jpg");
+            $ph1->setEnVente('true');
+            $ph1->setLargeur(25, 50);
+            $ph1->setHauteur(25, 50);
+            $ph1->setPrix(30, 00);
+            $ph1->setCadre("bois d'arbre");
+            $ph1->setEtat(1);
+            $ph1->setProjet($proj1);
 
-                $manager->persist($ph1);
+            $manager->persist($ph1);
+
+            for ($j = 1; $j <= 2; $j++) {
+                $ph2 = new Photo();
+                $ph2->setNom('La plage_' . $j);
+                $ph2->setDescription("lorem ipsum blabla");
+                $ph2->setSlug("laplage_" . $j);
+                $ph2->setFile("img{$j}.jpg");
+                $ph2->setEnVente('true');
+                $ph2->setLargeur(25, 50);
+                $ph2->setHauteur(25, 50);
+                $ph2->setPrix(30, 00);
+                $ph2->setCadre("bois d'arbre");
+                $ph2->setEtat(2);
+                $ph2->setProjet($proj1);
+
+                $manager->persist($ph2);
             }
             $manager->persist($proj1);
         }
@@ -115,7 +133,22 @@ class ProjetFixtures extends Fixture
             $proj2->addCategorie($cat2);
 
 
-            for ($j = 1; $j <= 3; $j++) {
+            $ph1 = new Photo();
+            $ph1->setNom('La montagne_' . $i);
+            $ph1->setDescription("lorem ipsum montagne");
+            $ph1->setSlug("laplage_". $i);
+            $ph1->setFile("img{$i}.jpg");
+            $ph1->setEnVente('true');
+            $ph1->setLargeur(25, 50);
+            $ph1->setHauteur(25, 50);
+            $ph1->setPrix(30, 00);
+            $ph1->setCadre("bois d'arbre");
+            $ph1->setEtat(1);
+            $ph1->setProjet($proj2);
+
+            $manager->persist($ph1);
+
+            for ($j = 1; $j <= 2; $j++) {
                 $ph2 = new Photo();
                 $ph2->setNom('La montagne_' . $j);
                 $ph2->setDescription("lorem ipsum montagne");
@@ -126,7 +159,7 @@ class ProjetFixtures extends Fixture
                 $ph2->setHauteur(25, 50);
                 $ph2->setPrix(30, 00);
                 $ph2->setCadre("bois d'arbre");
-                $ph2->setEtat("1");
+                $ph2->setEtat(2);
                 $ph2->setProjet($proj2);
 
                 $manager->persist($ph2);
@@ -137,28 +170,43 @@ class ProjetFixtures extends Fixture
 
         // ------------------------ PROJET 3 ------------------------//
         $proj3 = new Projet();
-        $proj3->setTitre("A la campagne" . $i);
+        $proj3->setTitre("A la campagne");
         $proj3->setDescription("je ne sais pas");
-        $proj3->setSlug("a_la_campagne". $i);
+        $proj3->setSlug("a_la_campagne");
         $proj3->setDate(new DateTime());
         $proj3->setStatut("1");
         $proj3->setUser($admin);
         $proj3->addCategorie($cat2);
         $proj3->addCategorie($cat3);
 
-        for ($j = 1; $j <= 3; $j++) {
-            $ph3 = new Photo();
-            $ph3->setNom('La plage_' . $j);
-            $ph3->setDescription("lorem ipsum blabla");
-            $ph3->setSlug("laplage_" . $j);
-            $ph3->setFile("img{$j}.jpg");
-            $ph3->setEnVente('true');
-            $ph3->setLargeur(25, 50);
-            $ph3->setHauteur(25, 50);
-            $ph3->setPrix(30, 00);
-            $ph3->setCadre("bois d'arbre");
-            $ph3->setEtat("1");
-            $ph3->setProjet($proj3);
+        $ph1 = new Photo();
+        $ph1->setNom('La plage_');
+        $ph1->setDescription("lorem ipsum blabla");
+        $ph1->setSlug("laplage_");
+        $ph1->setFile("img1.jpg");
+        $ph1->setEnVente('true');
+        $ph1->setLargeur(25, 50);
+        $ph1->setHauteur(25, 50);
+        $ph1->setPrix(30, 00);
+        $ph1->setCadre("bois d'arbre");
+        $ph1->setEtat(1);
+        $ph1->setProjet($proj3);
+
+        $manager->persist($ph1);
+
+        for ($j = 1; $j <= 2; $j++) {
+            $ph2 = new Photo();
+            $ph2->setNom('La plage_' . $j);
+            $ph2->setDescription("lorem ipsum blabla");
+            $ph2->setSlug("laplage_" . $j);
+            $ph2->setFile("img{$j}.jpg");
+            $ph2->setEnVente('true');
+            $ph2->setLargeur(25, 50);
+            $ph2->setHauteur(25, 50);
+            $ph2->setPrix(30, 00);
+            $ph2->setCadre("bois d'arbre");
+            $ph2->setEtat(2);
+            $ph2->setProjet($proj3);
 
             $manager->persist($ph2);
         }

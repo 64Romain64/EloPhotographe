@@ -27,17 +27,6 @@ class ProfessionnelOneController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/projet-{slug}/{id}", name="projet")
-     */
-    public function projet($id, ProjetRepository $projetRepository, UserRepository $userRepository): Response
-    {
-        $projet = $projetRepository->find($id);
-        
-        return $this->render('professionnel_one/projet-detail.html.twig', [
-            'projet' => $projet,
-            'photographe' => $userRepository->getPhotographe(),
-        ]);
-    }
+
 
 }

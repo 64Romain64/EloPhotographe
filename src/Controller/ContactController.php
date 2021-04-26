@@ -3,20 +3,23 @@
 namespace App\Controller;
 
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CategorieRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository, CategorieRepository $categorieRepository): Response
     {
+        $categorie = $categorieRepository->findAll();
+
         return $this->render('contact/index.html.twig', [
-            'controller_name' => 'ContactController',
             'photographe' => $userRepository->getPhotographe(),
+            'categories' => $categorie,
         ]);
     }
 }
