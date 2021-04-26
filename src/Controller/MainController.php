@@ -16,8 +16,6 @@ class MainController extends AbstractController
     {
         $projet = $projetRepository->findAll();
 
-        dump($projet);
-
         // return $this->render('main/index.html.twig', [
         //     'controller_name' => 'MainController',
         // ]);

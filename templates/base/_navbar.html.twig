@@ -1,0 +1,87 @@
+<!-- HEADER -->
+<header
+    class="right-menu ">
+    <!-- LOGO -->
+    <a href="{{path('main')}}" class="logo"><img src="{{ asset ('images/Logo.png') }}" alt=""></a>
+    <!-- /LOGO -->
+    <!-- MOB MENU ICON -->
+    <a href="{{path('main')}}" class="mob-nav"><i class="fa fa-bars"></i></a>
+    <!-- /MOB MENU ICON -->
+    <!-- ASIDE MENU ICON -->
+    <a href="{{path('main')}}" class="aside-nav">
+        <span class="aside-nav-line line-1"></span>
+        <span class="aside-nav-line line-2"></span>
+        <span class="aside-nav-line line-3"></span>
+    </a>
+    <!-- /ASIDE MOB MENU ICON -->
+    <!-- NAVIGATION -->
+    <nav id="topmenu" class="topmenu">
+        <ul class="menu">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                <a href="{{path('main')}}">HOME</a>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                <a href="#">PROFESSIONNEL</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="{{path('objet')}}">Photos d'objet</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-two.html">Photos Immobilières</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-three.html">Reportage d'entreprise</a></li>
+                    <li class="menu-item"><a href="blog-style-four.html">Photos industrielles</a></li>
+                    <li class="menu-item"><a href="blog-style-five.html">Visites virtuelles</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                <a href="#">PHOTOGRAPHIE D'ART</a>
+                <ul class="sub-menu">
+                    <li class="menu-item"><a href="blog.html">Paysage</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-two.html">Street / Urbain</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog-style-three.html">City</a></li>
+                    <li class="menu-item"><a href="blog-style-four.html">Grpahique / Créatif</a></li>
+                    <li class="menu-item"><a href="blog-style-five.html">MacroPhotographie</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">ABOUT</a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">CONTACT</a></li>
+            {% if app.user %}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
+            {% else %}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
+            {% endif %}
+            {# <li
+                <a href="#">SHOP</a>
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                <ul class="sub-menu">
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-one.html">Shop Style One</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-two.html">Shop Style Two</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="melisas-eyes.html">Product Detail</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="your-ideal-place.html">Product Detail Gallery</a></li>
+                </ul>
+            </li> #}
+        </ul>
+        <div class="f-right">
+            <div class="whizz-top-social">
+                <span class="social-icon fa fa-share-alt"></span>
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            {# <div class="mini-cart-wrapper">
+                <a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
+                <div class="whizz_mini_cart">
+                    <ul class="cart_list product_list_widget">
+                        <li class="empty">No products in the cart.</li>
+                    </ul>
+                    <!-- end product list -->
+                </div>
+            </div> #}
+        </div>
+    </nav>
+    <!-- NAVIGATION -->
+    <a href="#" class="socials-mob-but">
+        <i class="fa fa-share-alt"></i>
+    </a>
+</header>
