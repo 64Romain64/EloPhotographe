@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Elo Photographe - Contact
+{% endblock %}
+
+{% block body %}
+
+	{% include "main/_header.html.twig" %}
+
+	<div class="container">
+		<div class="hero">
+
+			{% include "contact/_titre.html.twig" %}
+
+			{% include "contact/_texte.html.twig" %}
+
+			<div class="vc_row vc_row-fluid  margin-lg-70b margin-xs-30b">
+
+				{% include "contact/_formulaire.html.twig" %}
+
+				{% include "contact/_adresse.html.twig" %}
+
+			</div>
+			<div class="kswr-row-element-back" data-classes="kswr_pnone kswr_mnone kswr_bnone"></div>
+		</div>
+	</div>
+
+{% endblock %}

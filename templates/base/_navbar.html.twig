@@ -40,9 +40,9 @@
                     <li class="menu-item"><a href="blog-style-five.html">MacroPhotographie</a></li>
                 </ul>
             </li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="#">ABOUT</a></li>
-            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">CONTACT</a></li>
+            {# <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="#">BLOG</a></li> #}
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="{{path ('about')}}">ABOUT</a></li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('contact')}}">CONTACT</a></li>
             {% if app.user %}
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
@@ -64,9 +64,9 @@
             <div class="whizz-top-social">
                 <span class="social-icon fa fa-share-alt"></span>
                 <ul class="social">
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="{{photographe.facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="{{photographe.instagram}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="{{photographe.linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
             </div>
             {# <div class="mini-cart-wrapper">

@@ -36,6 +36,20 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    /**
+    * Pour récupérer LE Photographe
+    */
+    public function getPhotographe(){
+
+        return $this->createQueryBuilder('u')
+            ->where('u.roles LIKE :roles')
+            ->setParameter('roles', '%"ROLE_PHOTOGRAPHE"%')
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

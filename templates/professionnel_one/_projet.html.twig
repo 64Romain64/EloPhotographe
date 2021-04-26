@@ -15,7 +15,7 @@
 											<div class="title">{{projet.titre}}</div>
 											<p class="desc"></p>
 											<p>{{projet.description}}</p>
-											<a href="{{ path ( 'projet' , {id: projet.id} ) }}" class="slide-text-more" target="_self">See more</a>
+											<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
                                             {# <a href="#" class="slide-text-more" target="_self">See more</a> #}
 
 										</div>

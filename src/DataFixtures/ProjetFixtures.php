@@ -26,15 +26,17 @@ class ProjetFixtures extends Fixture
     {
         // ------------------------ USER ------------------------//
         $admin = new User();
-        $admin->setNom('Admin');
-        $admin->setPrenom('Admin');
+        $admin->setNom('GONTHIER');
+        $admin->setPrenom('Elodie');
         $admin->setEmail('admin@gmail.com');
-        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setRoles(['ROLE_PHOTOGRAPHE']);
         $hash = $this->encoder->encodePassword($admin, "admin");
         $admin->setPassword($hash);
         $admin->setTelephone('0559000000');
-        $admin->setAPropos("Admin");
-        $admin->setInstagram("admin/instagram.com");
+        $admin->setAPropos("Je suis Elodie et je blablablabla");
+        $admin->setInstagram("https://www.instagram.com/elophotographe_64/");
+        $admin->setLinkedin("https://fr.linkedin.com/in/elodie-gonthier-0557561b8");
+        $admin->setFacebook("https://fr-fr.facebook.com/elodiegonthierphotographe");
         
         $user = new User();
         $user->setNom('Dupont');
