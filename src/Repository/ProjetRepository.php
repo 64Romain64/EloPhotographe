@@ -21,34 +21,17 @@ class ProjetRepository extends ServiceEntityRepository
         parent::__construct($registry, Projet::class);
     }
 
-    public function findAllPortfolio(Categorie $categorie):array
+    /**
+     * @return Projet[] Return an array of peinture objects
+     */
+    public function findAllActualite(Categorie $categorie): array
     {
         return $this->createQueryBuilder('p')
-        ->where(':categorie MEMBER OF p.categorie')
-        ->andWhere('p.statut = 0')
-        ->setParameter('categorie', $categorie)
-        ->getQuery()
-        ->getResult();
-    }
-    
-    public function findAllActualite(Categorie $categorie):array
-    {
-        return $this->createQueryBuilder('p')
-        ->where(':categorie MEMBER OF p.categorie')
-        ->andWhere('p.statut = 1')
-        ->setParameter('categorie', $categorie)
-        ->getQuery()
-        ->getResult();
-    }
-
-    public function findAllArchive(Categorie $categorie):array
-    {
-        return $this->createQueryBuilder('p')
-        ->where(':categorie MEMBER OF p.categorie')
-        ->andWhere('p.statut = 2')
-        ->setParameter('categorie', $categorie)
-        ->getQuery()
-        ->getResult();
+            ->where(':categorie MEMBER OF p.categorie')
+            ->andWhere('p.statut = 1')
+            ->setParameter('categorie', $categorie)
+            ->getQuery()
+            ->getResult();
     }
 
 }

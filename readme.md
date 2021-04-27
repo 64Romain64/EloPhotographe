@@ -32,6 +32,15 @@ symfony serve -d
 ```bash
 php bin/phpunit --testdox
 ```
+
+## Production
+
+### Envoi des mails de Contacts
+
+Les mails de prise de contact sont stockés dans la BDD, pour les envoyer au photographe par mail. Il faut mettre en place un cron sur : 
+```bash
+symfony console app:send-contact
+```
 ## ############################################## ##
 
 ## Terminal

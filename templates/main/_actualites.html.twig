@@ -24,12 +24,12 @@
 					<div class="margin-lg-30b">
 						<div class="wpb_wrapper">
 							{% for projet in projets %}
-								{% if projet.statut == "2" %}
-									{% for image in projet.photo.snapshot %}
+								{% for image in projet.photo.snapshot %}
 									<div class="item block_item_0 creativity">
 										<a class="item-link gridrotate-alb default yes" target="_self">
 											<div class="item-img">
-												<div class="images-one">
+												<div
+													class="images-one">
 													{# {{ dump(projet.photo.snapshot[1].file) }} #}
 													<img data-lazy-src="" src="{{ asset ('images/' ~ image.file) }}" class="" alt=""/></div>
 											</div>
@@ -39,21 +39,20 @@
 												<div class="social-icon fa fa-share-alt">
 													<ul class="big_gap_share">
 														<li>
-															<div class="fa fa-facebook" data-share="http://www.facebook.com/sharer.php?u=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&amp;t=IMPRESSURE"></div>
+															<div class="fa fa-facebook" data-share="{{photographe.facebook}}"></div>
 														</li>
 														<li>
-															<div class="fa fa-pinterest-p" data-share="http://pinterest.com/pin/create/button/?url=http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/&media=http://wp.themedemo.co/whizz-black/wp-content/uploads/2017/06/1.jpg"></div>
+															<div class="fa fa-instagram" data-share="{{photographe.instagram}}"></div>
 														</li>
 														<li>
-															<div class="fa fa-twitter" data-share="http://twitter.com/home/?status=IMPRESSURE - http://wp.themedemo.co/whizz-black/portfolio-item/impressure-2/"></div>
+															<div class="fa fa-linkedin" data-share="{{photographe.linkedin}}"></div>
 														</li>
 													</ul>
 												</div>
 											</div>
 										</a>
 									</div>
-									{% endfor %}
-								{% endif %}
+								{% endfor %}
 							{% endfor %}
 						</div>
 					</div>
@@ -62,64 +61,26 @@
 		</div>
 	</div>
 	<div class="row  margin-lg-80b">
-		<div class="col-sm-6 col-lg-4 col-md-4 col-xs-12  margin-lg-10b margin-sm-50b">
-			<div class="wpb_wrapper">
-				<div class="twitter-wrapper ">
-					<span class="fa fa fa-twitter"></span>
-					<div class="twitter-wrap">
-						<img src="./assets/images/cHuicvOV.jpg" alt="">
-						<div class="name">
-							Andrew Filder
-						</div>
-						<div class="slug">
-							@filder_muko
-						</div>
-						<div class="description">
-							Nulla in quam faucibus est sollicitudin suscipit ullamcorper eu turpis. Integer pulvinar a sem et hendrerit.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-4 col-md-4 col-xs-12  margin-lg-10b margin-sm-50b">
-			<div class="wpb_wrapper">
-				<div class="twitter-wrapper ">
-					<span class="fa fa fa-quote-right"></span>
-					<div class="twitter-wrap">
-						<img src="./assets/images/ylIqVs2i.jpg" alt="">
-						<div class="name">
-							Brianna Kell
-						</div>
-						<div class="slug">
-							@kell_brianaa
-						</div>
-						<div class="description">
-							Suspendisse dignissim justo et lacus tempus, ac hendrerit orci pharetra. Cras eget pharetra ipsum
+		{% for commentaire in commentaires %}
+			<div class="col-sm-6 col-lg-4 col-md-4 col-xs-12  margin-lg-10b margin-sm-50b">
+				<div class="wpb_wrapper">
+					<div class="twitter-wrapper ">
+						<span class="fa fa fa-twitter"></span>
+						<div class="twitter-wrap">
+							<img src="./assets/images/cHuicvOV.jpg" alt="">
+							<div class="name">
+								{{commentaire.user.nom}}
+							</div>
+							<div class="slug">
+								{{commentaire.date | date("d/m/Y")}}
+							</div>
+							<div class="description">
+								{{commentaire.contenu}}
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-6 vc_col-lg-4 col-md-offset-0 col-md-4 col-sm-offset-3 col-xs-12  margin-lg-60b margin-sm-25b">
-			<div class="wpb_wrapper">
-				<div class="twitter-wrapper ">
-					<span class="fa fa fa-twitter"></span>
-
-					<div class="twitter-wrap">
-
-						<img src="./assets/images/8eTHE4-n.jpg" alt="">
-						<div class="name">
-							David Karletto
-						</div>
-						<div class="slug">
-							@david_karletto
-						</div>
-						<div class="description">
-							In hac habitasse platea dictumst. Aliquam eget est tristique, mollis mi non,lobortis nibh. Nam mattis ultrices pretium.
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </div></div>

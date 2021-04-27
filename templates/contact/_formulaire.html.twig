@@ -1,3 +1,5 @@
+<div class="my-custom-class-for-errors">{{form_errors(form)}}</div>
+
 <div class="vc_column_container vc_col-sm-6 vc_col-lg-7 ">
 	<div class="vc_column-inner ">
 		<div>
@@ -5,33 +7,42 @@
 				<div class="screen-reader-response"></div>
 				<form method="post" class="wpcf7-form" novalidate="novalidate">
 
+					{{ form_start(form)}}
+					{% for message in app.flashes('success')%}
+						<div class="alert alert-success">{{message}}</div>
+					{% endfor %}
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-md-6">
-								<label>NOM<br/>
-									<span class="wpcf7-form-control-wrap your-text"><input type="text" name="your-text" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Votre nom"/></span><br/>
+								<label>{{form_label(form.nom)}}<br/>
+									{# <span class="wpcf7-form-control-wrap your-text"><input type="text" name="your-text" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Votre nom"/></span><br/> #}
 								</label>
+								{{form_widget(form.nom)}}
 							</div>
 							<div class="col-xs-12 col-md-6">
-								<label>EMAIL<br/>
-									<span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Votre e-mail"/></span><br/>
+								<label>{{form_label(form.email)}}<br/>
+									{# <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Votre e-mail"/></span><br/> #}
 								</label>
+								{{form_widget(form.email)}}
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-								<label>COMMENTAIRE<br/>
-									<span class="wpcf7-form-control-wrap your-textarea">
+								<label>{{form_label(form.message)}}<br/>
+									{# <span class="wpcf7-form-control-wrap your-textarea">
 										<textarea name="your-textarea" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Votre message"></textarea>
-									</span><br/>
+									</span><br/> #}
+									{{form_widget(form.message)}}
 								</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-12 text-center"><input type="submit" value="ENVOYER" class="wpcf7-form-control wpcf7-submit"/></div>
+							{# <div class="col-xs-12 text-center"><input type="submit" value="ENVOYER" class="wpcf7-form-control wpcf7-submit"/></div> #}
+							{{form_widget(form.envoyer)}}
 						</div>
 					</div>
 					<div class="wpcf7-response-output wpcf7-display-none"></div>
+					{{form_end(form)}}
 				</form>
 			</div>
 		</div>
