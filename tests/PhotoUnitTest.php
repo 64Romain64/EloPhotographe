@@ -2,8 +2,9 @@
 
 namespace App\Tests;
 
-use App\Entity\Projet;
 use App\Entity\Photo;
+use App\Entity\Projet;
+use App\Entity\Commentaire;
 use PHPUnit\Framework\TestCase;
 
 class PhotoUnitTest extends TestCase
@@ -22,7 +23,8 @@ class PhotoUnitTest extends TestCase
               ->setLargeur(20.20)
               ->setPrix(20.20)
               ->setCadre('cadre')
-              ->setEtat(1);
+              ->setEtat(1)
+              ->setProjet($projet);
 
         $this->assertTrue($photo->getNom() === 'nom');
         $this->assertTrue($photo->getDescription() === 'description');
@@ -34,11 +36,13 @@ class PhotoUnitTest extends TestCase
         $this->assertTrue($photo->getPrix() == 20.20);
         $this->assertTrue($photo->getCadre() === 'cadre');
         $this->assertTrue($photo->getEtat() == 1);
+        $this->assertTrue($photo->getProjet() == $projet);
     }
 
     public function testIsFalse(){
 
         $photo = new Photo();
+        $projet = new Projet();
 
         $photo->setNom('nom')
               ->setDescription('description')
@@ -49,7 +53,8 @@ class PhotoUnitTest extends TestCase
               ->setLargeur(20.20)
               ->setPrix(20.20)
               ->setCadre('cadre')
-              ->setEtat(1);
+              ->setEtat(1)
+              ->setProjet($projet);
 
         $this->assertFalse($photo->getNom() === 'false');
         $this->assertFalse($photo->getDescription() === 'false');
@@ -60,6 +65,7 @@ class PhotoUnitTest extends TestCase
         $this->assertFalse($photo->getLargeur() == 40.40);
         $this->assertFalse($photo->getPrix() == 40.40);
         $this->assertFalse($photo->getCadre() === 'false');
+        $this->assertTrue($photo->getProjet() == new Projet());
     }
 
     public function testIsEmpty(){
@@ -76,5 +82,21 @@ class PhotoUnitTest extends TestCase
         $this->assertEmpty($photo->getPrix());
         $this->assertEmpty($photo->getCadre());
         $this->assertEmpty($photo->getEtat());
+        $this->assertEmpty($photo->getId());
+        $this->assertEmpty($photo->getProjet());
+    }
+
+    public function testAddGetRemoveCommentaire(){
+
+        $photo = new Photo();
+        $commentaire = new Commentaire();
+
+        $this->assertEmpty($photo->getCommentaire());
+
+        $photo->addCommentaire($commentaire);
+        $this->assertContains($commentaire, $photo->getCommentaire());
+
+        $photo->removeCommentaire($commentaire);
+        $this->assertEmpty($photo->getCommentaire());
     }
 }

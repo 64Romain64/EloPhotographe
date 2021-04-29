@@ -37,7 +37,10 @@ class SendContactCommand extends Command{
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $toSend = $this->contactRepository->findBy(['isSend' => false]);
-        $adress = new Address($this->userRepository->getPhotographe()->getEmail(), $this->userRepository->getPhotographe()->getNom() . ' ' . $this->userRepository->getPhotographe()->getPrenom());
+        $adress = new Address(
+            $this->userRepository->getPhotographe()->getEmail(), 
+            $this->userRepository->getPhotographe()->getNom() . ' ' . 
+            $this->userRepository->getPhotographe()->getPrenom());
     
         foreach ($toSend as $mail) {
             $email = (new Email())

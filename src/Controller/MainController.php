@@ -16,8 +16,8 @@ class MainController extends AbstractController
      */
     public function index(ProjetRepository $projetRepository, UserRepository $userRepository, CommentaireRepository $commentaireRepository): Response
     {
-        $projet = $projetRepository->findby(array("statut" => 0));
-        $commentaire = $commentaireRepository->findby(array("publie" => true));
+        $projet = $projetRepository->findby(["statut" => 0]);
+        $commentaire = $commentaireRepository->findby(["publie" => true]);
 
         return $this->render('main/index.html.twig', [
             'projets' => $projet,
