@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Photo;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -20,6 +21,14 @@ class PhotoCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Photo::class;
+    }
+
+    public function configureFilters(Filters $filters): Filters
+    {
+        return $filters
+            ->add('nom')
+            ->add('projet')
+            ->add('etat');
     }
 
     public function configureFields(string $pageName): iterable
