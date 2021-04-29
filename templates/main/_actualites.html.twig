@@ -31,7 +31,9 @@
 												<div
 													class="images-one">
 													{# {{ dump(projet.photo.snapshot[1].file) }} #}
-													<img data-lazy-src="" src="{{ asset ('images/' ~ image.file) }}" class="" alt=""/></div>
+													<img data-lazy-src="{{vich_uploader_asset(image, 'imageFile') }}" src="" class="" alt=""/></div>
+													{# <img data-lazy-src="{{ asset ('images/' ~ image.file) }}" src="{{ asset ('images/' ~ image.file) }}" class="" alt=""/></div> #}
+
 											</div>
 											<div class="item-overlay"></div>
 											<div class="portfolio-title">

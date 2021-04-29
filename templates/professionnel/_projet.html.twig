@@ -4,26 +4,29 @@
 			<div class="swiper-container-split">
 				<div class="swiper-wrapper">
 					{% for projet in projets %}
-					<div class="swiper-slide">
-						<div class="slide-item slide-text slide-text-left">
-							<div class="wrap-slide-text">
-								<div class="subtitle">
-									<a href="#" rel="tag">{{categorie.nom}}</a>
+						<div class="swiper-slide">
+							<div class="slide-item slide-text slide-text-left">
+								<div class="wrap-slide-text">
+									<div class="subtitle">
+										<a href="#" rel="tag">{{categorie.nom}}</a>
+									</div>
+									<div class="title">{{projet.titre}}</div>
+									<p class="desc">{{projet.description}}</p>
+									<p></p>
+									<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
+									{# <a href="#" class="slide-text-more" target="_self">See more</a> #}
 								</div>
-								<div class="title">{{projet.titre}}</div>
-								<p class="desc">{{projet.description}}</p>
-								<p></p>
-								<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
-								{# <a href="#" class="slide-text-more" target="_self">See more</a> #}
 							</div>
-						</div>
-						<div class="slide-item slide-img">
-							<div class="swiper-lazy" data-background="./assets/images/stock-photo-119564653.jpg">
-								<div class="swiper3-lazy-preloader"></div>
-							</div>
-						</div>
-					</div>
-
+							<div class="slide-item slide-img">
+								{% for photo in projet.photo.snapshot %}
+									{% if photo.etat == "1" %}
+										<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) }}">
+											<div class="swiper3-lazy-preloader"></div>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
 					{% endfor %}
 
 				</div>
