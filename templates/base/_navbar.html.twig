@@ -59,21 +59,21 @@
 				<a href="{{path ('contact')}}">CONTACT</a>
 			</li>
 			{# {% if app.user %}
-						                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
-						                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
-						            {% else %}
-						                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
-						            {% endif %} #}
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
+			{% else %}
+				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
+			{% endif %} #}
 			{# <li
-						                <a href="#">SHOP</a>
-						                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-						                <ul class="sub-menu">
-						                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-one.html">Shop Style One</a></li>
-						                    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-two.html">Shop Style Two</a></li>
-						                    <li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="melisas-eyes.html">Product Detail</a></li>
-						                    <li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="your-ideal-place.html">Product Detail Gallery</a></li>
-						                </ul>
-						            </li> #}
+			<a href="#">SHOP</a>
+			class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+			<ul class="sub-menu">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-one.html">Shop Style One</a></li>
+				<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-two.html">Shop Style Two</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="melisas-eyes.html">Product Detail</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="your-ideal-place.html">Product Detail Gallery</a></li>
+			</ul>
+		</li> #}
 		</ul>
 		<div class="f-right">
 			<div class="whizz-top-social">
@@ -94,23 +94,25 @@
 							<i class="fa fa-linkedin"></i>
 						</a>
 					</li>
-					<li>
-						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a href="{{path ('admin')}}" target="_blank">ADMIN
-							<p>{{ app.user.nom }}</p>
-						{% endif %}
-					</li>
+					{% if is_granted('ROLE_ADMIN') %}
+						<li>
+							<a style="color:red" href="{{path ('admin')}}" target="_blank">
+								<i class="fa fa-user"></i> ADMIN
+							</a>
+							{# <p>{{ app.user.nom }}</p> #}
+						</li>
+					{% endif %}
 				</ul>
 			</div>
 			{# <div class="mini-cart-wrapper">
-						                <a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
-						                <div class="whizz_mini_cart">
-						                    <ul class="cart_list product_list_widget">
-						                        <li class="empty">No products in the cart.</li>
-						                    </ul>
-						                    <!-- end product list -->
-						                </div>
-						            </div> #}
+			<a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
+			<div class="whizz_mini_cart">
+				<ul class="cart_list product_list_widget">
+					<li class="empty">No products in the cart.</li>
+				</ul>
+				<!-- end product list -->
+			</div>
+		</div> #}
 		</div>
 	</nav>
 	<!-- NAVIGATION -->

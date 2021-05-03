@@ -2,14 +2,17 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Photo;
 use App\Entity\Projet;
 use App\Entity\Categorie;
+use App\Entity\Commentaire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use Symfony\Component\Security\Core\User\UserInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -27,26 +30,47 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('EloPhotographe');
+            ->setTitle('ADMINISTRATION du site EloPhotographe');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Retour à la page d\'accueil', 'fas fa-arrow-left', 'main');
-        yield MenuItem::linkToRoute('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::section('Catégorie');
+        yield MenuItem::linkToRoute('Retour au site', 'fas fa-arrow-left', 'main');
+        // yield MenuItem::linkToRoute('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
+        yield MenuItem::section('Accueil');
+        yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
+        
+        // yield MenuItem::section('Utilisateurs')->setPermission('ROLE_SUPER_ADMIN');
+        // yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class)->setPermission('ROLE_SUPER_ADMIN');;
+        // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
+        // ->setAction('new')
+        // ->setPermission('ROLE_SUPER_ADMIN');
+
+        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
+        yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
+        ->setAction('new');
+
+        yield MenuItem::section('Catégories');
         yield MenuItem::linkToCrud('Categorie', 'fas fa-cat', Categorie::class);
-        yield MenuItem::linkToCrud('Créer une categorie', 'fas fa-cat', Categorie::class)
+        yield MenuItem::linkToCrud('Ajouter une categorie', 'fas fa-plus-circle', Categorie::class)
             ->setAction('new');
  
         yield MenuItem::section('Projets');
-        yield MenuItem::subMenu('Projets', 'fa fa-article')
-                        ->setSubItems
-                        ([
-                            MenuItem::linkToCrud('Projets', 'fas fa-tasks', Projet::class),
-                            MenuItem::linkToCrud('Photos', 'fas fa-camera', Photo::class),
-                        ]);
+        yield MenuItem::linkToCrud('<b>Projets</b>', 'fas fa-tasks', Projet::class);
+        yield MenuItem::linkToCrud('<i>Ajouter un projet</i>', 'fas fa-plus-circle', Projet::class)
+            ->setAction('new');
+        yield MenuItem::linkToCrud('<b>Photos</b>', 'fas fa-camera', Photo::class);
+        yield MenuItem::linkToCrud('<i>Ajouter une photo</i>', 'fas fa-plus-circle', Photo::class)
+        ->setAction('new');
+        yield MenuItem::linkToCrud('<b>Commentaire</b>', 'fas fa-comments', Commentaire::class);
+
+        // yield MenuItem::subMenu('Projets', 'fa fa-article')
+        //                 ->setSubItems
+        //                 ([
+        //                     MenuItem::linkToCrud('Projets', 'fas fa-tasks', Projet::class),
+        //                     MenuItem::linkToCrud('Photos', 'fas fa-camera', Photo::class),
+        //                 ]);
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu

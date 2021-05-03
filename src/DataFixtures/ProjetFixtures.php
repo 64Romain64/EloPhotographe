@@ -25,11 +25,21 @@ class ProjetFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         // ------------------------ USER ------------------------//
+
+        $superAdmin = new User();
+        $superAdmin->setNom('GONTHIER');
+        $superAdmin->setPrenom('Romain');
+        $superAdmin->setEmail('superadmin@superadmin.com');
+        $superAdmin->setRoles(['ROLE_SUPER_ADMIN']);
+        $hash = $this->encoder->encodePassword($superAdmin, "admin");
+        $superAdmin->setPassword($hash);
+        $superAdmin->setTelephone('0559000000');
+
         $admin = new User();
         $admin->setNom('GONTHIER');
         $admin->setPrenom('Elodie');
-        $admin->setEmail('admin@gmail.com');
-        $admin->setRoles(['ROLE_PHOTOGRAPHE']);
+        $admin->setEmail('admin@admin.com');
+        $admin->setRoles(['ROLE_ADMIN']);
         $hash = $this->encoder->encodePassword($admin, "admin");
         $admin->setPassword($hash);
         $admin->setTelephone('0559000000');
@@ -49,6 +59,7 @@ class ProjetFixtures extends Fixture
         $user->setAPropos("c'est moi");
         $user->setInstagram("instagram.com");
         
+        $manager->persist($superAdmin);
         $manager->persist($admin);
         $manager->persist($user);
 

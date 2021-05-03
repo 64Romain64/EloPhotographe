@@ -117,19 +117,19 @@ class Projet
 
         return $this;
     }
-
+    
     public function getStatut(): ?float
     {
         return $this->statut;
     }
-
+    
     public function setStatut(float $statut): self
     {
         $this->statut = $statut;
-
+        
         return $this;
     }
-
+    
     /**
      * @return Collection|Photo[]
      */

@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -34,23 +35,30 @@ class PhotoCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nom'),
-            TextareaField::new('description')->hideOnIndex(),
+            TextField::new('nom', 'Nom de la photo')
+            ->setHelp('Pour mettre une photo en présentation du site, appelé "photoAccueil"'),
+            TextareaField::new('description', 'Description de la photo')->hideOnIndex(),
             // TextareaField::new('cadre')->hideOnIndex(),
             // NumberField::new('largeur')->hideOnIndex(),
             // NumberField::new('hauteur')->hideOnIndex(),
             // NumberField::new('prix')->hideOnIndex(),
             // BooleanField::new('enVente'),
-            NumberField::new('etat'),
-            // ImageField::new('file')
-            //     ->setBasePath('public/uploads/photos')
-            //     ->setUploadDir('public/uploads/photos')
-            //     ->setFormType(FileUploadType::class)
-            //     ->setUploadedFileNamePattern('[slug].[extension]'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
-            ImageField::new('file')->setBasePath('/images/')->onlyOnIndex(),
-            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
-            AssociationField::new('projet'),
+            ChoiceField::new('etat', 'Principale ou secondaire')
+            ->setHelp('<b>Choisir 1 photo comme principale seulement</b></br>
+                <b>Principale : </b><i>Affichage de la photo sur la page du projet</i></br> 
+                <b>Secondaire : </b><i>Affichage des photos dans le projet</i>' )
+            ->setChoices(['Principal' => 1,
+                          'Secondaire' => 2]
+                        ),
+            ImageField::new('file', 'Image')
+                ->setBasePath('/images/')
+                ->setUploadDir('public/images')
+                ->setFormType(FileUploadType::class)
+                ->setUploadedFileNamePattern('[slug].[extension]'),
+            // TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
+            // ImageField::new('file')->setBasePath('/images/')->onlyOnIndex(),
+            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex()->setHelp("Chemin 'url' de la photo"),
+            AssociationField::new('projet', 'Photo associée au projet :'),
         ];
     }
     public function configureCrud(Crud $crud): Crud
