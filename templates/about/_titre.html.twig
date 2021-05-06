@@ -1,8 +1,8 @@
     <div class="container-full">
         <div class="wpb_wrapper">
             <div class="container-fluid top-banner  center_content">
-                <img data-lazy-src="./assets/images/pexels-photo-908491.jpg"
-                     src="data:image/gif;base64,R0lGODdhAQABAIAAAAAAAMzMzCwAAAAAAQABAAACAkQBADs="
+                <img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}"
+                     src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}"
                      class="s-img-switch" alt=""/> <span class="overlay"></span>
                 <div class="content">
                     <div class="row text-light">
