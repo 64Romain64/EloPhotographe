@@ -6,8 +6,8 @@
 				<div class="whizz-widget-contact">
 					<h3 class="contact_content">ELO PHOTOGRAPHE</h3>
 					<div class="contact_content">71 Avenue de Buros, 64000 PAU</div>
-					<a href="mailto:whizz@example.com" class="contact_url">
-						<span class="__cf_email__" data-cfemail="6d1a050417172d08150c001d0108430e0200">contact@elophotographe.com</span>
+					<a href="mailto:{{photographe.email}}" class="contact_url">
+						<span class="__cf_email__">{{photographe.email}}</span>
 					</a>
 					<a href="{{photographe.facebook}}" target="_blank" class="fa fa-facebook"></a>
 					<a href="{{photographe.instagram}}" target="_blank" class="fa fa-instagram"></a>
@@ -18,6 +18,7 @@
 				<div class="quze-widget-user quze-widget-border-bottom">
 					<h3>MY INSTAGRAM</h3>
 					<div class="images-wrap clearfix">
+						<a href="{{photographe.instagram}}" target="_blank"><img src="{{photographe.instagram}}" class="img-responsive img" alt=""></a>
 						{# <a href="https://www.instagram.com/p/BZBn7c9Bbuf/" target="_blank"><img src="./assets/images/21688994_1671483912895790_8046628998651838464_n.jpg" class="img-responsive img" alt=""></a>
 						<a href="https://www.instagram.com/p/BZBn7IlhEin/" target="_blank"><img src="./assets/images/21819745_1951787281711042_2151630520528666624_n.jpg" class="img-responsive img" alt=""></a>
 						<a href="https://www.instagram.com/p/BZBn5pZhJ1d/" target="_blank"><img src="./assets/images/21568962_1768928190072974_9179497670320848896_n.jpg" class="img-responsive img" alt=""></a>

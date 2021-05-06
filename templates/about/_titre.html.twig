@@ -1,17 +1,20 @@
-    <div class="container-full">
-        <div class="wpb_wrapper">
-            <div class="container-fluid top-banner  center_content">
-                <img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}"
-                     src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}"
-                     class="s-img-switch" alt=""/> <span class="overlay"></span>
-                <div class="content">
-                    <div class="row text-light">
-                        <div class="col-xs-12">
-                            <h1 class="title">{{photographe.prenom}}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="container-full">
+	<div class="wpb_wrapper">
+		<div class="container-fluid top-banner  center_content">
+			{% if photo %}
+				<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" class="s-img-switch" alt="{{photo[0].description}}"/>
+                {% else %}
+                    <img data-lazy-src="#" src="#" class="s-img-switch" alt=""/>
+			{% endif %}
+            <span class="overlay"></span>
+			<div class="content">
+				<div class="row text-light">
+					<div class="col-xs-12">
+						<h1 class="title">{{photographe.prenom}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        </div>
-    </div>
+	</div>
+</div>

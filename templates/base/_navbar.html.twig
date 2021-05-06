@@ -50,8 +50,8 @@
 				</ul>
 			</li>
 			{# <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">
-				<a href="{{path ('visites')}}">Visites Virtuelles</a>
-			</li> #}
+													<a href="{{path ('visites')}}">Visites Virtuelles</a>
+												</li> #}
 			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
 				<a href="{{path ('about')}}">ABOUT</a>
 			</li>
@@ -59,29 +59,22 @@
 				<a href="{{path ('contact')}}">CONTACT</a>
 			</li>
 
-			{% if app.user %}
-				<div class="mb-3">
-					You are logged in as
-					{{ app.user.username }},
-					<a href="{{ path('app_logout') }}">Logout</a>
-				</div>
-			{% endif %}
 			{# {% if app.user %}
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
-			{% else %}
-				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
-			{% endif %} #}
+													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
+													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>
+												{% else %}
+													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_login')}}">CONNEXION</a></li>
+												{% endif %} #}
 			{# <li
-			<a href="#">SHOP</a>
-			class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-			<ul class="sub-menu">
-				<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-one.html">Shop Style One</a></li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-two.html">Shop Style Two</a></li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="melisas-eyes.html">Product Detail</a></li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="your-ideal-place.html">Product Detail Gallery</a></li>
-			</ul>
-		</li> #}
+												<a href="#">SHOP</a>
+												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+												<ul class="sub-menu">
+													<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-one.html">Shop Style One</a></li>
+													<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="shop-style-two.html">Shop Style Two</a></li>
+													<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="melisas-eyes.html">Product Detail</a></li>
+													<li class="menu-item menu-item-type-post_type menu-item-object-product"><a href="your-ideal-place.html">Product Detail Gallery</a></li>
+												</ul>
+											</li> #}
 		</ul>
 		<div class="f-right">
 			<div class="whizz-top-social">
@@ -104,23 +97,39 @@
 					</li>
 					{% if is_granted('ROLE_ADMIN') %}
 						<li>
-							<a style="color:red" href="{{path ('admin')}}" target="_blank">
-								<i class="fa fa-user"></i> ADMIN
+							<a style="color:blue" href="{{path ('admin')}}" target="_blank">
+								<i class="fa fa-user"></i>
+								ADMIN
 							</a>
 							{# <p>{{ app.user.nom }}</p> #}
 						</li>
+						<li>
+							<a style="color:red" href="{{ path('app_logout') }}">
+								<i class="fa fa-sign-out"></i>Deconnexion
+							</a>
+						</li>
+
+						{# <li>
+							{% if app.user %}
+								<div class="mb-3">
+									Bienvenue
+									{{ app.user.prenom}}
+									{{ app.user.nom }}
+								</div>
+							{% endif %}
+						</li> #}
 					{% endif %}
 				</ul>
 			</div>
 			{# <div class="mini-cart-wrapper">
-			<a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
-			<div class="whizz_mini_cart">
-				<ul class="cart_list product_list_widget">
-					<li class="empty">No products in the cart.</li>
-				</ul>
-				<!-- end product list -->
-			</div>
-		</div> #}
+												<a class="whizz-shop-icon fa fa-shopping-bag" title="View your shopping cart"></a>
+												<div class="whizz_mini_cart">
+													<ul class="cart_list product_list_widget">
+														<li class="empty">No products in the cart.</li>
+													</ul>
+													<!-- end product list -->
+												</div>
+											</div> #}
 		</div>
 	</nav>
 	<!-- NAVIGATION -->

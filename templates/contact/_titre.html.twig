@@ -1,19 +1,24 @@
-            <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row vc_row-fluid vc_row-no-padding  margin-lg-10b">
-                <div class="vc_column_container vc_col-sm-12 ">
-                    <div class="vc_column-inner ">
-                        <div>
-                            <div class="container-fluid top-banner  center_content">
-                                <img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" src="{{ asset ('images/' ~ photo[0].file)}}" class="s-img-switch" alt="" />                    <span class="overlay"></span>
-                                <div class="content">
-                                    <div class="row text-light">
-                                        <div class="col-xs-12">
-                                            <h1 class="title">ME CONTACTER</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="kswr-column-settings" data-minheight="0px" data-isminheight="off" data-theclasses="kswr_pnone kswr_mnone kswr_bnone"></div>
-            </div>
+<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row vc_row-fluid vc_row-no-padding  margin-lg-10b">
+	<div class="vc_column_container vc_col-sm-12 ">
+		<div class="vc_column-inner ">
+			<div>
+				<div class="container-fluid top-banner  center_content">
+					{% if photo %}
+						<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" src="{{ asset ('images/' ~ photo[0].file)}}" class="s-img-switch" alt="{{photo[0].description}}"/>
+					{% else %}
+						<img data-lazy-src="#" src="#" class="s-img-switch" alt=""/>	
+					{% endif %}
+                    <span class="overlay"></span>
+					<div class="content">
+						<div class="row text-light">
+							<div class="col-xs-12">
+								<h1 class="title">ME CONTACTER</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="kswr-column-settings" data-minheight="0px" data-isminheight="off" data-theclasses="kswr_pnone kswr_mnone kswr_bnone"></div>
+</div>
