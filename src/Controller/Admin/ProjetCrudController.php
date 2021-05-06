@@ -33,8 +33,8 @@ class ProjetCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           TextField::new('titre', 'Titre de la photo'),
-           TextareaField::new('description', 'Description de la photo'),
+           TextField::new('titre', 'Titre du projet'),
+           TextareaField::new('description', 'Description du projet'),
            DateField::new('date')->hideOnForm(),
            ChoiceField::new('statut', 'Statut')
                 ->setHelp('<b>Actualité : </b><i>Projet mis sur la page d\'accueil</i></br>

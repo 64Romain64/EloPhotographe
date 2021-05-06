@@ -17,6 +17,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
+
 class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -53,14 +54,18 @@ class UserCrudController extends AbstractCrudController
     
     public function configureActions(Actions $actions): Actions
     {
-        $viewInvoice = Action::new('')
-        ->linkToCrudAction('');
+        // $viewInvoice = Action::new('')
+        // ->linkToCrudAction('');
 
         return $actions
     
-        ->add(Crud::PAGE_DETAIL, $viewInvoice)
+        // ->add(Crud::PAGE_DETAIL, $viewInvoice)
         ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
         ->setPermission(Action::EDIT, 'ROLE_SUPER_ADMIN')
+        ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
+        // ->disable(Action::DELETE, 'ROLE_SUPER_ADMIN')
+
     ;
     }
+    
 }

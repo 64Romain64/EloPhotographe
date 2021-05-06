@@ -37,32 +37,34 @@ class PhotoCrudController extends AbstractCrudController
         return [
             TextField::new('nom', 'Nom de la photo')
             ->setHelp('Pour mettre une photo en présentation du site, appelé "photoAccueil"'),
+            AssociationField::new('projet', 'Photo associée au projet :')->hideOnForm(),
             TextareaField::new('description', 'Description de la photo')->hideOnIndex(),
             // TextareaField::new('cadre')->hideOnIndex(),
             // NumberField::new('largeur')->hideOnIndex(),
             // NumberField::new('hauteur')->hideOnIndex(),
             // NumberField::new('prix')->hideOnIndex(),
             // BooleanField::new('enVente'),
+            ImageField::new('file', 'Image')
+            ->setBasePath('/images/')
+            ->setUploadDir('public/images')
+            ->setFormType(FileUploadType::class)
+            ->setUploadedFileNamePattern('[slug].[extension]'),
             ChoiceField::new('etat', 'Principale ou secondaire')
             ->setHelp('<b>Choisir 1 photo comme principale seulement</b></br>
                 <b>Principale : </b><i>Affichage de la photo sur la page du projet</i></br> 
-                <b>Secondaire : </b><i>Affichage des photos dans le projet</i>' )
-            ->setChoices(['Principal' => 1,
-                          'Secondaire' => 2]
-                        ),
-            ImageField::new('file', 'Image')
-                ->setBasePath('/images/')
-                ->setUploadDir('public/images')
-                ->setFormType(FileUploadType::class)
-                ->setUploadedFileNamePattern('[slug].[extension]'),
+                <b>Secondaire : </b><i>Affichage des photos dans le projet</i>')
+            ->setChoices(
+                ['<h5>PRINCIPALE</h5>' => 1,
+                'Secondaire' => 2]
+            ),
             // TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             // ImageField::new('file')->setBasePath('/images/')->onlyOnIndex(),
             SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex()->setHelp("Chemin 'url' de la photo"),
-            AssociationField::new('projet', 'Photo associée au projet :'),
+            AssociationField::new('projet', 'Photo associée au projet :')->hideOnIndex(),
         ];
     }
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud->setDefaultSort(['projet' => 'ASC']);
+        return $crud->setDefaultSort(['projet' => 'DESC']);
     }
 }

@@ -83,6 +83,16 @@ class ProjetFixtures extends Fixture
         $manager->persist($cat2);
         $manager->persist($cat3);
 
+        // ------------------------ CATEGORIES ------------------------//
+        $ph = new Photo();
+        $ph->setNom('photoAccueil');
+        $ph->setDescription("lorem ipsum blabla");
+        $ph->setSlug('photoAccueil');
+        $ph->setFile("img5.jpg");
+        $ph->setEnVente('true');
+        $ph->setEtat(1);
+
+        $manager->persist($ph);
 
         // ------------------------ PROJET 1 ------------------------//
         for ($i = 1; $i <= 3; $i++) {

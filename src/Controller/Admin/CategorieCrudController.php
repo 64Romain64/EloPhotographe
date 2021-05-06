@@ -35,6 +35,9 @@ class CategorieCrudController extends AbstractCrudController
                             ),
             TextField::new('nom', 'Nom du sous-Menu'),
             AssociationField::new('projets', 'Nombre de projets')->hideOnForm(),
+
+            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
+
         ];
     }
 

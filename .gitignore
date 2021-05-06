@@ -27,3 +27,7 @@ yarn-error.log
 !/public/images/img3.jpg
 !/public/images/img4.jpg
 !/public/images/Logo.png
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###

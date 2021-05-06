@@ -20,7 +20,7 @@
 							<div class="slide-item slide-img">
 								{% for photo in projet.photo.snapshot %}
 									{% if photo.etat == "1" %}
-										<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) }}">
+										<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) | imagine_filter('welcome') }}">
 											<div class="swiper3-lazy-preloader"></div>
 										</div>
 									</div>

@@ -2,7 +2,7 @@
 		<div class="row margin-lg-60b margin-sm-20b margin-xs-25b">
 			<div class="col-sm-12 ">
 				<div class="container-fluid top-banner full-height-window center_content">
-					<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) }}" src="{{ asset ('images/' ~ photo[0].file) }}" class="s-img-switch" alt=""/>
+					<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" class="s-img-switch" alt=""/>
 					<div class="content">
 						<div class="row text-light">
 							<div class="col-xs-12">

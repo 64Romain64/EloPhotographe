@@ -58,6 +58,14 @@
 			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">
 				<a href="{{path ('contact')}}">CONTACT</a>
 			</li>
+
+			{% if app.user %}
+				<div class="mb-3">
+					You are logged in as
+					{{ app.user.username }},
+					<a href="{{ path('app_logout') }}">Logout</a>
+				</div>
+			{% endif %}
 			{# {% if app.user %}
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">Bonjour {{app.user.nom}}</li>
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu"><a href="{{path ('app_logout')}}">DECONNEXION</a></li>

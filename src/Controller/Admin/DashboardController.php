@@ -5,8 +5,11 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Entity\Photo;
 use App\Entity\Projet;
+use App\Entity\Contact;
 use App\Entity\Categorie;
 use App\Entity\Commentaire;
+use App\Repository\ProjetRepository;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -15,7 +18,15 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\UserMenu;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use Symfony\Component\Security\Core\User\UserInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+
+/**
+ * @IsGranted("ROLE_ADMIN")
+ */
 
 class DashboardController extends AbstractDashboardController
 {
@@ -30,30 +41,30 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('ADMINISTRATION du site EloPhotographe');
+            ->setTitle('Elo Photographe');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToRoute('Retour au site', 'fas fa-arrow-left', 'main');
-        // yield MenuItem::linkToRoute('Deconnexion', 'fas fa-sign-out-alt', 'app_logout');
+        yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt');
         yield MenuItem::section('Accueil');
         yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         
-        // yield MenuItem::section('Utilisateurs')->setPermission('ROLE_SUPER_ADMIN');
-        // yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class)->setPermission('ROLE_SUPER_ADMIN');;
-        // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
-        // ->setAction('new')
-        // ->setPermission('ROLE_SUPER_ADMIN');
-
-        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::section('Utilisateurs')->setPermission('ROLE_SUPER_ADMIN');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
-        ->setAction('new');
+        ->setAction('new')
+        ->setPermission('ROLE_SUPER_ADMIN');
 
-        yield MenuItem::section('Catégories');
-        yield MenuItem::linkToCrud('Categorie', 'fas fa-cat', Categorie::class);
-        yield MenuItem::linkToCrud('Ajouter une categorie', 'fas fa-plus-circle', Categorie::class)
+        // yield MenuItem::section('Utilisateurs');
+        // yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
+        // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
+        // ->setAction('new');
+
+        yield MenuItem::section('Barre de navigation');
+        yield MenuItem::linkToCrud('Menu', 'fas fa-cat', Categorie::class);
+        yield MenuItem::linkToCrud('Ajouter un sous-menu', 'fas fa-plus-circle', Categorie::class)
             ->setAction('new');
  
         yield MenuItem::section('Projets');
@@ -63,30 +74,33 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('<b>Photos</b>', 'fas fa-camera', Photo::class);
         yield MenuItem::linkToCrud('<i>Ajouter une photo</i>', 'fas fa-plus-circle', Photo::class)
         ->setAction('new');
+
+        yield MenuItem::section('Commentaires');
         yield MenuItem::linkToCrud('<b>Commentaire</b>', 'fas fa-comments', Commentaire::class);
 
-        // yield MenuItem::subMenu('Projets', 'fa fa-article')
-        //                 ->setSubItems
-        //                 ([
+        yield MenuItem::section('Mails');
+        yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open', Contact::class);
+
+        // yield MenuItem::subMenu('Projets', 'fas fa-tasks')
+        //                 ->setSubItems([
         //                     MenuItem::linkToCrud('Projets', 'fas fa-tasks', Projet::class),
+        //                     MenuItem::linkToCrud('<i>Ajouter un projet</i>', 'fas fa-plus-circle', Projet::class)
+        //                     ->setAction('new'),
         //                     MenuItem::linkToCrud('Photos', 'fas fa-camera', Photo::class),
+        //                     MenuItem::linkToCrud('<i>Ajouter une photo</i>', 'fas fa-plus-circle', Photo::class)
+        //                     ->setAction('new'),
         //                 ]);
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu
     {
-        // Usually it's better to call the parent method because that gives you a
-        // user menu with some menu items already created ("sign out", "exit impersonation", etc.)
-        // if you prefer to create the user menu from scratch, use: return UserMenu::new()->...
-        return parent::configureUserMenu($user)
-            // use the given $user object to get the user name
-            ->setName($user->getUsername())
-            // use this method if you don't want to display the name of the user
-            ->displayUserName(false)
 
-            // you can use any type of menu item, except submenus
+        return parent::configureUserMenu($user)
+            ->setName($user->getUsername())
+            ->displayUserName(false)
             ->addMenuItems([
-                MenuItem::linkToRoute('My Profile', 'fa fa-id-card', '...', ['...' => '...']),
+                MenuItem::linkToCrud('Moi', 'fas fa-users', User::class),
+                MenuItem::linkToRoute('User', 'fa fa-id-card', '...', ['...' => '...']),
                 MenuItem::linkToRoute('Settings', 'fa fa-user-cog', '...', ['...' => '...']),
                 MenuItem::section(),
                 MenuItem::linkToLogout('Logout', 'fa fa-sign-out'),

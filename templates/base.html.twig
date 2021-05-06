@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-														           and uncomment the following Encore helpers to start using Symfony UX #}
+																		           and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +27,7 @@
 			<link rel="stylesheet" href="{{asset ('css/style.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/style3.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/custom.css') }}">
+			<link rel="stylesheet" href="{{asset ('css/custom.css?v=1') }}">
 			<link rel="stylesheet" href="{{asset ('css/style.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/menu-item-item.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/style.min.css') }}">
@@ -34,8 +35,9 @@
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/wp-mediaelement.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/mediaelementplayer-legacy.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/admin-ajax.css?v=1') }}">
-			<link rel="shortcut icon" href="{{asset ('images/fx_favicon.png') }}">
-			<link rel="stylesheet" href="{{asset ('css/app.css') }}">
+			<link rel="stylesheet" href="{{asset ('css/romain.css') }}">
+			{# <link rel="shortcut icon" href="{{asset ('images/fx_favicon.png') }}"> #}
+
 		{% endblock %}
 	</head>
 	<body>
@@ -83,6 +85,6 @@
 		<script src="{{ asset ('js/script.js') }}"></script>
 		<script src="{{ asset ('js/js_composer_front.min.js') }} "></script>
 		<script src="{{ asset ('js/email-decode.min.js') }} "></script>
-
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	{% endblock %}
 </html>
