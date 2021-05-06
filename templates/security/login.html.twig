@@ -1,125 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Elo Photographe - A Propos
+{% block title %}
+
+	Elo Photographe - A Propos
+
 {% endblock %}
 
-	{% block stylesheets %}
-    			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="{{asset ('css/animsition.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/jquery.flipster.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/bootstrap.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/magnific-popup.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/animate.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/kenburning.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/font-awesome.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/pe-icon-7-stroke.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/jquery.fancybox.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/swiper3.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('lib/css/admin-style.css') }}">
-			<link rel="stylesheet" href="{{asset ('lib/css/lightgallery.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('lib/css/style.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/style.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/style3.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/custom.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/style.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/menu-item-item.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/style.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/js_composer.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('lib/mediaelement/wp-mediaelement.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('lib/mediaelement/mediaelementplayer-legacy.min.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/admin-ajax.css?v=1') }}">
-			{# <link rel="shortcut icon" href="{{asset ('images/fx_favicon.png') }}"> #}
+{% block stylesheets %}
 
+	{% include 'security/_stylesheets.html.twig' %}
 
-			<link rel="stylesheet" href="{{asset ('css/app.css') }}">
-			<link rel="stylesheet" href="{{asset ('css/connexion.css') }}">
-			<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-    	{% endblock %}
+{% endblock %}
 
 {% block body %}
 
-	{% include 'main/_header.html.twig' %}
+	{% include "base/header-w.html.twig" %}
 
-	<div class="container-full">
-		<div class="row margin-lg-60b margin-sm-20b margin-xs-25b">
-			<div class="col-sm-12 ">
-				<div class="container-fluid top-banner full-height-window center_content">
-					<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) }}" src="{{ asset ('images/' ~ photo[0].file) }}" class="s-img-switch" alt=""/>
-					<div class="content">
-						<div class="row text-light">
-							<div class="col-xs-12">
+	{% include 'security/_connexion.html.twig' %}
 
-								<div class="wrapper fadeInDown">
-									<div id="formContent">
-
-										<form method="post">
-											{% if error %}
-												<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-											{% endif %}
-
-											{% if app.user %}
-												<div class="mb-3">
-													You are logged in as
-													{{ app.user.username }},
-													<a href="{{ path('app_logout') }}">Logout</a>
-												</div>
-											{% endif %}
-
-											<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="fadeIn second" placeholder="login" required autofocus>
-											<input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
-											<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-											<input type="submit" class="fadeIn fourth" value="Connexion">
-										</form>
-
-									</div>
-								</div>
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 {% endblock %}
 
-	{% block javascripts %}
-    		<script src="{{ asset ('js/jquery-3.3.1.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery-migrate.min.js') }} "></script>
-		<script src="{{ asset ('js/lib/modernizr-2.6.2.min.js') }}"></script>
-		<script src="{{ asset ('js/lib/scripts.js') }}"></script>
-		<script src="{{ asset ('js/anime.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.countdown.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.justifiedGallery.js') }} "></script>
-		<script src="{{ asset ('js/lib/idangerous.swiper.min_.js') }}"></script>
-		<script src="{{ asset ('js/jquery.flipster.min.js') }}"></script>
-		<script src="{{ asset ('js/foxlazy.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.easings.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.multiscroll.min.js') }}"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-		<script src="{{ asset ('js/kenburning.min.js') }}"></script>
-		<script src="{{ asset ('js/equalHeightsPlugin.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.fancybox.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.fitvids.min.js') }}"></script>
-		<script src="{{ asset ('js/zepto.min.js') }}"></script>
-		<script src="{{ asset ('js/swiper3.min.js') }}"></script>
-		<script src="{{ asset ('js/imagesloaded.pkgd.min.js') }}"></script>
-		<script src="{{ asset ('js/fragment.js') }}"></script>
-		<script src="{{ asset ('js/scrollMonitor.min.js') }}"></script>
-		<script src="{{ asset ('js/slider-transition.min.js') }}"></script>
-		<script src="http://www.youtube.com/iframe_api"></script>
-		<script src="{{ asset ('lib/js/jquery.mousewheel.min.js') }}"></script>
-		<script src="{{ asset ('lib/js/lightgallery.min.js') }}"></script>
-		<script src="{{ asset ('lib/js/jquery.justifiedGallery.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.sliphover.min.js') }}"></script>
-		<script src="{{ asset ('js/lib/thumbnails-popup.min.js') }}"></script>
-		<script src="{{ asset ('js/pixi.min.js') }}"></script>
-		<script src="{{ asset ('js/script.js') }}"></script>
-		<script src="{{ asset ('js/js_composer_front.min.js') }} "></script>
-		<script src="{{ asset ('js/email-decode.min.js') }} "></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% block javascripts %}
 
-	{% endblock %}
+	{% include 'security/_javascript.html.twig' %}
+
+{% endblock %}

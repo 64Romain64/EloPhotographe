@@ -1,0 +1,28 @@
+	<div class="container">
+		<div class="hero">
+			<div class="wpb_wrapper">
+				<div class="marg_discriminating">
+					<div class="row gallery-single margin-xs-0b infinite_gallery" data-thumb="true">
+						<div class="izotope-container-2">
+
+							{% for photo in projet.photo.snapshot %}
+								{% if photo.etat == "2" %}
+									<div class="fullwidth full-single item-single item1">
+										<a href="{{ asset ('images/' ~ photo.file) }}" class="gallery-item s-back-switch">
+											<img data-lazy-src="{{ asset ('images/' ~ photo.file) | imagine_filter('photo') }}" src="{{ asset ('images/' ~ photo.file) | imagine_filter('photo') }}" class="s-img-switch" alt="Pharetra"/>
+											<div class="info-content">
+												<div class="vertical-align">
+													<h5>{{photo.nom}}</h5>
+												</div>
+											</div>
+										</a>
+									</div>
+								{% endif %}
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+	Elo Photo - {{projet.titre}}
+
+{% endblock %}
+
+{% block body %}
+
+	{% include "base/header-w.html.twig" %}
+
+	{% include "professionnel/projet/_presentation.html.twig" %}
+
+	{% include "professionnel/projet/_detail.html.twig" %}
+
+
+{% endblock %}

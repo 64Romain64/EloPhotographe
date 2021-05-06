@@ -1,0 +1,41 @@
+<div class="container-full">
+	<div class="row margin-lg-60b margin-sm-20b margin-xs-25b">
+		<div class="col-sm-12 ">
+			<div class="container-fluid top-banner full-height-window center_content">
+				<img data-lazy-src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" src="{{ asset ('images/' ~ photo[0].file) | imagine_filter('welcome') }}" class="s-img-switch" alt=""/>
+				<div class="content">
+					<div class="row text-light">
+						<div class="col-xs-12">
+
+							<div class="wrapper fadeInDown">
+								<div id="formContent">
+
+									<form method="post">
+										{% if error %}
+											<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+										{% endif %}
+
+										{% if app.user %}
+											<div class="mb-3">
+												You are logged in as
+												{{ app.user.username }},
+												<a href="{{ path('app_logout') }}">Logout</a>
+											</div>
+										{% endif %}
+
+										<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="fadeIn second" placeholder="login" required autofocus>
+										<input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
+										<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+										<input type="submit" class="fadeIn fourth" value="Connexion">
+									</form>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

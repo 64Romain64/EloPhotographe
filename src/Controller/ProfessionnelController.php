@@ -32,7 +32,7 @@ class ProfessionnelController extends AbstractController
     {
         $projet = $projetRepository->find($id);
         
-        return $this->render('professionnel/projet-detail.html.twig', [
+        return $this->render('professionnel/projet/index.html.twig', [
             'projet' => $projet,
             'photographe' => $userRepository->getPhotographe(),
         ]);
