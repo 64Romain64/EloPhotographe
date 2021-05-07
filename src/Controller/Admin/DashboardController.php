@@ -53,9 +53,9 @@ class DashboardController extends AbstractDashboardController
         
         yield MenuItem::section('Utilisateurs')->setPermission('ROLE_SUPER_ADMIN');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
-        yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
-        ->setAction('new')
-        ->setPermission('ROLE_SUPER_ADMIN');
+        // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
+        // ->setAction('new')
+        // ->setPermission('ROLE_ADMIN');
 
         // yield MenuItem::section('Utilisateurs');
         // yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);

@@ -4,31 +4,59 @@
 			<div class="swiper-container-split">
 				<div class="swiper-wrapper">
 					{% for projet in projets %}
-						<div class="swiper-slide">
-							<div class="slide-item slide-text slide-text-left">
-								<div class="wrap-slide-text">
-									<div class="subtitle">
-										<a href="#" rel="tag">{{categorie.nom}}</a>
+						{% if loop.index is odd %}
+							<div class="swiper-slide">
+								<div class="slide-item slide-text slide-text-left">
+									<div class="wrap-slide-text">
+										<div class="subtitle">
+											<a href="#" rel="tag">{{categorie.nom}}</a>
+										</div>
+										<div class="title">{{projet.titre}}</div>
+										<p class="desc"></p>
+										<p>{{projet.description}}</p>
+										<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
+										{# <a href="#" class="slide-text-more" target="_self">See more</a> #}
 									</div>
-									<div class="title">{{projet.titre}}</div>
-									<p class="desc">{{projet.description}}</p>
-									<p></p>
-									<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
-									{# <a href="#" class="slide-text-more" target="_self">See more</a> #}
+								</div>
+								<div class="slide-item slide-img">
+									{% for photo in projet.photo.snapshot %}
+										{% if photo.etat == "1" %}
+											<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) | imagine_filter('welcome') }}">
+												<div class="swiper3-lazy-preloader"></div>
+											</div>
+										{% endif %}
+									{% endfor %}
 								</div>
 							</div>
-							<div class="slide-item slide-img">
-								{% for photo in projet.photo.snapshot %}
-									{% if photo.etat == "1" %}
-										<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) | imagine_filter('welcome') }}">
-											<div class="swiper3-lazy-preloader"></div>
+						{% else %}
+							<div class="swiper-slide">
+								<div class="slide-item slide-img">
+									{% for photo in projet.photo.snapshot %}
+										{% if photo.etat == "1" %}
+											<div class="swiper-lazy" data-background="{{ asset ('images/' ~ photo.file) | imagine_filter('welcome') }}">
+												<div class="swiper3-lazy-preloader"></div>
+											</div>
+										{% endif %}
+									{% endfor %}
+								</div>
+
+								<div class="slide-item slide-text slide-text-right">
+									<div class="wrap-slide-text">
+										<div class="subtitle">
+											<a href="#" rel="tag">{{categorie.nom}}</a>
 										</div>
+										<div class="title">{{projet.titre}}</div>
+										<p class="desc"></p>
+										<p>{{projet.description}}</p>
+										<a href="{{ path ( 'projet' , {slug: projet.slug, id : projet.id}) }}" class="slide-text-more" target="_self">See more</a>
 									</div>
 								</div>
-							{% endif %}
-						{% endfor %}
-					{% endfor %}
 
+							</div>
+
+
+						{% endif %}
+					{% endfor %}
 				</div>
 			</div>
 		</div>

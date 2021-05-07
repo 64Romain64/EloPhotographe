@@ -64,14 +64,14 @@
 	</div>
 	<div class="row  margin-lg-80b">
 		{% for commentaire in commentaires %}
-			<div class="col-sm-6 col-lg-4 col-md-4 col-xs-12  margin-lg-10b margin-sm-50b">
+			<div class="col-sm-6 col-lg-4 col-md-4 col-xs-12  margin-lg-10b margin-sm-50b ">
 				<div class="wpb_wrapper">
 					<div class="twitter-wrapper ">
-						<span class="fa fa fa-twitter"></span>
-						<div class="twitter-wrap">
-							<div class="name">
+						<span class="fa fa fa-quote-right"></span>
+						<div class="twitter-wrap mx-auto">
+							{# <div class="name">
 								{{commentaire.user.nom}}
-							</div>
+							</div> #}
 							<div class="slug">
 								{{commentaire.date | date("d/m/Y")}}
 							</div>

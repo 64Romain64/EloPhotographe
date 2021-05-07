@@ -32,7 +32,6 @@ class UserCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('prenom'),
             EmailField::new('email'),
-            TextField::new('password')->hideOnIndex(),
             TextField::new('telephone')->hideOnIndex(),
             ArrayField::new('roles')->hideOnForm(),
             ChoiceField::new('roles', 'Roles')
@@ -59,13 +58,16 @@ class UserCrudController extends AbstractCrudController
 
         return $actions
     
-        // ->add(Crud::PAGE_DETAIL, $viewInvoice)
-        ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
-        ->setPermission(Action::EDIT, 'ROLE_SUPER_ADMIN')
-        ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
-        // ->disable(Action::DELETE, 'ROLE_SUPER_ADMIN')
-
-    ;
+        ->add(Crud::PAGE_INDEX, Action::DETAIL)
+        // ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
+        // ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN');
+        ->disable(Action::DELETE, Action::NEW);
     }
     
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('index', 'Paramètres')
+            ->setPageTitle('edit', 'Editer les paramètres');
+    }
 }
