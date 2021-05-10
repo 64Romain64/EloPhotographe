@@ -1,0 +1,30 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvé
+{% endblock %}
+
+{% block body %}
+
+{% include "base/header-b.html.twig" %}
+
+	<div class="home-header container-fluid mt-3 border-O">
+		<div class="row">
+			<div class="col-12 p-0">
+				<div id=" header-text" class="text-center">
+					{# <h1>Page non trouvée</h1>
+					<p>la page que vous cherchez n'a pas été trouvé</p>
+					<p>Code de l'erreur :
+						{{status_code}}
+						{{status_text}}</p> #}
+                    <img src="{{asset ('images/404_illustration.jpg')}}" alt="">
+					
+				</div>
+                <div class="text-center">
+                <a href="{{path ('main')}}">Retour à la page d'accueil</a></div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
