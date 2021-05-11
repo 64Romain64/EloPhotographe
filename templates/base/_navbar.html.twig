@@ -28,7 +28,7 @@
 					{% for categorie in categorieNavBar() %}
 						{% if categorie.titre == "Professionnel" %}
 							<li class="menu-item menu-item-type-custom menu-item-object-custom">
-								<a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos
+								<a href="{{ path ( 'professionnel' , {slug: categorie.slug}) }}">Photos
 									{{categorie.nom}}</a>
 							</li>
 							{# <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#">Photos {{categorie.nom}}</a></li> #}
@@ -42,7 +42,7 @@
 					{% for categorie in categorieNavBar() %}
 						{% if categorie.titre == "Art" %}
 							<li class="menu-item menu-item-type-custom menu-item-object-custom">
-								<a href="{{ path ( '{slug}' , {slug: categorie.slug}) }}">Photos
+								<a href="{{ path ( 'professionnel' , {slug: categorie.slug}) }}">Photos
 									{{categorie.nom}}</a>
 							</li>
 						{% endif %}
@@ -64,7 +64,7 @@
 				<span class="social-icon fa fa-share-alt"></span>
 
 				<ul class="social">
-					{% if photographe %}
+					{% if photographe is defined %}
 						<li>
 							<a href="{{photographe.facebook}}" target="_blank">
 								<i class="fa fa-facebook"></i>

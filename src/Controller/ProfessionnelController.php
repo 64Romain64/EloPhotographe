@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProfessionnelController extends AbstractController
 {
     /**
-     * @Route("/professionnel-{slug}", name="{slug}")
+     * @Route("/professionnel-{slug}", name="professionnel")
      */
     public function professionnel(Categorie $categorie, ProjetRepository $projetRepository, UserRepository $userRepository): Response
     {
