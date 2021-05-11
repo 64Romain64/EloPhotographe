@@ -22,9 +22,9 @@
 						{% endif %}
 					{% endfor %}
 					{{result}}
-					projets dans votre portfolio.
+					projets dans de publiés.
 				</li>
-				<li>
+				{# <li>
 					{% set result = 0 %}
 					{% for projet in ea.user.projet.snapshot %}
 						{% if projet.statut == 0 %}
@@ -43,13 +43,18 @@
 					{% endfor %}
 					{{result}}
 					projets archivés.
-				</li>
+				</li> #}
 			</ul>
 		</div>
-			<pre>
-    {{ dump(ea) }}
-</pre>
-		</p>
-	</div>
+		<div>
+			<p>Votre lien instagram est :
+				{{ea.user.instagram}}
+			</p>
+			<p>Votre lien linkedin est :
+				{{ea.user.linkedin}}</p>
+			<p>Votre lien facebbok est :
+				{{ea.user.facebook}}</p>
+		</div>
 
-{% endblock %}
+
+	{% endblock %}

@@ -63,7 +63,7 @@ class DashboardController extends AbstractDashboardController
         // ->setAction('new');
 
         yield MenuItem::section('Barre de navigation');
-        yield MenuItem::linkToCrud('Menu', 'fas fa-cat', Categorie::class);
+        // yield MenuItem::linkToCrud('Menu', 'fas fa-cat', Categorie::class);
         yield MenuItem::linkToCrud('Ajouter un sous-menu', 'fas fa-plus-circle', Categorie::class)
             ->setAction('new');
  
