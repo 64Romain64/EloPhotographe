@@ -78,8 +78,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Commentaires');
         yield MenuItem::linkToCrud('<b>Commentaire</b>', 'fas fa-comments', Commentaire::class);
 
-        yield MenuItem::section('Mails');
-        yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open', Contact::class);
+        // yield MenuItem::section('Mails');
+        // yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open', Contact::class);
 
         // yield MenuItem::subMenu('Projets', 'fas fa-tasks')
         //                 ->setSubItems([

@@ -3,12 +3,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!{% endblock %}
+			{% block title %}Welcome!
+			{% endblock %}
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle`
-		and uncomment the following Encore helpers to start using Symfony UX #}
+				and uncomment the following Encore helpers to start using Symfony UX #}
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBF1M8RCJJ"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+					function gtag() {
+						dataLayer.push(arguments);
+					}
+					gtag('js', new Date());
+					gtag('config', 'G-QBF1M8RCJJ');
+			</script>
+			
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet" href="{{asset ('css/animsition.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/jquery.flipster.min.css') }}">
@@ -34,8 +46,9 @@
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/wp-mediaelement.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/mediaelementplayer-legacy.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/admin-ajax.css?v=1') }}">
-			<link rel="stylesheet" href="{{asset ('css/romain.css') }}">
-			{# <link rel="shortcut icon" href="{{asset ('images/fx_.png') }}"> #}
+			<link
+			rel="stylesheet" href="{{asset ('css/romain.css') }}">
+		{# <link rel="shortcut icon" href="{{asset ('images/fx_.png') }}"> #}
 
 		{% endblock %}
 	</head>
