@@ -11,20 +11,24 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+
+    /* ----------------------------------------------
+    ------------------ CONNEXION --------------------
+    -----------------------------------------------*/
+
     /**
      * @Route("/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils, UserRepository $userRepository, PhotoRepository $photoRepository): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
 
-        // get the login error if there is one
+        // Obtenir une erreur de connexion s'il y en a une
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+
+        // Dernier nom saisi par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        // Permet de trouver la photo dont le nom est photoAccueil. Permet son affichage en arrière plan de la page de connexion
         $photo = $photoRepository->findBy(['nom' => 'photoAccueil']);
 
         return $this->render('security/login.html.twig', [
@@ -34,6 +38,10 @@ class SecurityController extends AbstractController
             'photo' => $photo,
             ]);
     }
+
+    /* ----------------------------------------------
+    ----------------- DECONNEXION -------------------
+    -----------------------------------------------*/
 
     /**
      * @Route("/logout", name="app_logout")

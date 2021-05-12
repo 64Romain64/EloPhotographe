@@ -18,9 +18,14 @@ class MainController extends AbstractController
     public function index(ProjetRepository $projetRepository, UserRepository $userRepository, CommentaireRepository $commentaireRepository, PhotoRepository $photoRepository): Response
     {
         // Statut -> O : Actualité / 1 : Portfolio / 2 : Archives
-        $projet = $projetRepository->findby(["statut" => 0]); // Permet de retrouver les catégories avec un statut 0 
-        $commentaire = $commentaireRepository->findby(["publie" => true]); // Permet de retrouver les commentaires qui ont été publié
-        $photo = $photoRepository->findBy(['nom' => 'photoAccueil']); // Permet de retrouver la photo dont le nom est photoAccueil
+        // Permet de retrouver les catégories avec un statut 0 
+        $projet = $projetRepository->findby(["statut" => 0]); 
+
+        // Permet de retrouver les commentaires qui ont été publié
+        $commentaire = $commentaireRepository->findby(["publie" => true]); 
+
+        // Permet de trouver la photo dont le nom est photoAccueil. Permet son affichage dans la page d'accueil
+        $photo = $photoRepository->findBy(['nom' => 'photoAccueil']); 
 
         return $this->render('main/index.html.twig', [
             'projets' => $projet,

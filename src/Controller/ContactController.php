@@ -19,15 +19,18 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, ContactService $contactService, UserRepository $userRepository, PhotoRepository $photoRepository): Response
     {
+
+        // Permet de trouver la photo dont le nom est photoContact. Permet son affichage dans la page contact
+        $photo = $photoRepository->findBy(['nom' => 'photoContact']);
+
+        // Envoi d'un mail
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
-        $photo = $photoRepository->findBy(['nom' => 'photoContact']);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
             $contactService->persistContact($contact);
-
             return $this->redirectToRoute('contact');
         }
 

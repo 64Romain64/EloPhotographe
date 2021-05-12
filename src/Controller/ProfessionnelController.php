@@ -16,6 +16,8 @@ class ProfessionnelController extends AbstractController
      */
     public function professionnel(Categorie $categorie, ProjetRepository $projetRepository, UserRepository $userRepository): Response
     {
+        // Permet de trouver les projets qui ont la même catégorie et dont le statut est 1
+        // findAllActualité est une fonction dans le ProjetRepository.php
         $projet = $projetRepository->findAllActualite($categorie);
 
         return $this->render('professionnel/index.html.twig', [
@@ -30,6 +32,7 @@ class ProfessionnelController extends AbstractController
      */
     public function projet($id, ProjetRepository $projetRepository, UserRepository $userRepository): Response
     {
+        // Permet de trouver les ID du projet
         $projet = $projetRepository->find($id);
         
         return $this->render('professionnel/projet/index.html.twig', [

@@ -38,16 +38,21 @@ class DashboardController extends AbstractDashboardController
         return $this->render('admin/dashboard.html.twig');
     }
 
+    // Titre de la partie Admin
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
             ->setTitle('Elo Photographe');
     }
 
+     // Fonction pour configurer le menu principal
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToRoute('Retour au site', 'fas fa-arrow-left', 'main');
         yield MenuItem::linkToLogout('Deconnexion', 'fas fa-sign-out-alt');
+        
+        // --------------------------
+
         yield MenuItem::section('Accueil');
         yield MenuItem::linktoDashboard('Accueil', 'fa fa-home');
         
@@ -56,42 +61,38 @@ class DashboardController extends AbstractDashboardController
         // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
         // ->setAction('new')
         // ->setPermission('ROLE_ADMIN');
-
         // yield MenuItem::section('Utilisateurs');
         // yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         // yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus-circle', User::class)
         // ->setAction('new');
 
+        // --------------------------
+
         yield MenuItem::section('Barre de navigation');
         // yield MenuItem::linkToCrud('Menu', 'fas fa-cat', Categorie::class);
         yield MenuItem::linkToCrud('Ajouter un sous-menu', 'fas fa-plus-circle', Categorie::class)
             ->setAction('new');
+
+        // --------------------------
  
         yield MenuItem::section('Projets');
+
         yield MenuItem::linkToCrud('<b>Projets</b>', 'fas fa-tasks', Projet::class);
         yield MenuItem::linkToCrud('<i>Ajouter un projet</i>', 'fas fa-plus-circle', Projet::class)
             ->setAction('new');
+
         yield MenuItem::linkToCrud('<b>Photos</b>', 'fas fa-camera', Photo::class);
         yield MenuItem::linkToCrud('<i>Ajouter une photo</i>', 'fas fa-plus-circle', Photo::class)
         ->setAction('new');
 
+        // --------------------------
+
         yield MenuItem::section('Commentaires');
         yield MenuItem::linkToCrud('<b>Commentaire</b>', 'fas fa-comments', Commentaire::class);
 
-        // yield MenuItem::section('Mails');
-        // yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open', Contact::class);
-
-        // yield MenuItem::subMenu('Projets', 'fas fa-tasks')
-        //                 ->setSubItems([
-        //                     MenuItem::linkToCrud('Projets', 'fas fa-tasks', Projet::class),
-        //                     MenuItem::linkToCrud('<i>Ajouter un projet</i>', 'fas fa-plus-circle', Projet::class)
-        //                     ->setAction('new'),
-        //                     MenuItem::linkToCrud('Photos', 'fas fa-camera', Photo::class),
-        //                     MenuItem::linkToCrud('<i>Ajouter une photo</i>', 'fas fa-plus-circle', Photo::class)
-        //                     ->setAction('new'),
-        //                 ]);
     }
 
+    // Configuration de l'onget en haut à droite dans l'administration
     public function configureUserMenu(UserInterface $user): UserMenu
     {
 
@@ -100,10 +101,7 @@ class DashboardController extends AbstractDashboardController
             ->displayUserName(false)
             ->addMenuItems([
                 MenuItem::linkToCrud('Moi', 'fas fa-users', User::class),
-                MenuItem::linkToRoute('User', 'fa fa-id-card', '...', ['...' => '...']),
-                MenuItem::linkToRoute('Settings', 'fa fa-user-cog', '...', ['...' => '...']),
-                MenuItem::section(),
-                MenuItem::linkToLogout('Logout', 'fa fa-sign-out'),
+                MenuItem::linkToLogout('Deconnexion', 'fa fa-sign-out'),
             ]);
     }
 }

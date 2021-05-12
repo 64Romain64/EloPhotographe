@@ -21,6 +21,11 @@ class ProjetRepository extends ServiceEntityRepository
         parent::__construct($registry, Projet::class);
     }
 
+    /* -----------------------------------------------------
+    Fonction permettant de trouver les projets qui ont pour 
+    statut 1 
+    ------------------------------------------------------*/
+    
     /**
      * @return Projet[] Return an array of peinture objects
      */

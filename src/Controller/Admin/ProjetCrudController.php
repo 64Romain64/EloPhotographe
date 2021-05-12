@@ -23,6 +23,7 @@ class ProjetCrudController extends AbstractCrudController
         return Projet::class;
     }
 
+    // Fonction Permettant d'ajouter un filtre par titre / categorie
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
@@ -30,12 +31,16 @@ class ProjetCrudController extends AbstractCrudController
             ->add('categorie');
     }
 
+    // Fonction pour configurer le menu projet
     public function configureFields(string $pageName): iterable
     {
         return [
            TextField::new('titre', 'Titre du projet'),
+
            TextareaField::new('description', 'Description du projet'),
+
            DateField::new('date')->hideOnForm(),
+
            ChoiceField::new('statut', 'Statut')
                 ->setHelp('<b>Actualité : </b><i>Projet mis sur la page d\'accueil</i></br>
                            <b>Projet : </b><i>Projet mis dans la catégorie Professionnel ou Photographie d\'art</i></br>
@@ -46,13 +51,25 @@ class ProjetCrudController extends AbstractCrudController
                             ),
                             
            AssociationField::new('categorie')->hideOnIndex(),
+
            AssociationField::new('photo', 'Nombre de photos')->hideOnForm(),
+
            SlugField::new('slug')->setTargetFieldName('titre')->hideOnIndex()->setHelp("Chemin 'url' du projet"),
         ];
     }
 
+    /* Fonction permettant :
+            - l'affichage des projets par ordre chronologique
+            - Modifier les titres
+    */
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud->setDefaultSort(['date' => 'DESC']);
+        return $crud
+            ->setDefaultSort(['date' => 'ASC'])
+            ->setPageTitle('edit', 'Modifier le projet')
+            ->setPageTitle('index', 'Liste des projets')
+            ->setPageTitle('new', 'Créer un projet');;
     }
+
+    
 }

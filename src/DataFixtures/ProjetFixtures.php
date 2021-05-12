@@ -24,17 +24,12 @@ class ProjetFixtures extends Fixture
     
     public function load(ObjectManager $manager)
     {
-        // ------------------------ USER ------------------------//
+        /* ------------------------------------------------------
+        --------------------- UTILISATEURS ----------------------
+         ----           Création des utilisateurs          ------
+        -------------------------------------------------------*/
 
-        $superAdmin = new User();
-        $superAdmin->setNom('GONTHIER');
-        $superAdmin->setPrenom('Romain');
-        $superAdmin->setEmail('superadmin@superadmin.com');
-        $superAdmin->setRoles(['ROLE_SUPER_ADMIN']);
-        $hash = $this->encoder->encodePassword($superAdmin, "admin");
-        $superAdmin->setPassword($hash);
-        $superAdmin->setTelephone('0559000000');
-
+        // Création d'un rôle ADMIN
         $admin = new User();
         $admin->setNom('GONTHIER');
         $admin->setPrenom('Elodie');
@@ -48,6 +43,7 @@ class ProjetFixtures extends Fixture
         $admin->setLinkedin("https://fr.linkedin.com/in/elodie-gonthier-0557561b8");
         $admin->setFacebook("https://fr-fr.facebook.com/elodiegonthierphotographe");
         
+        // Création d'un utilisateur normal
         $user = new User();
         $user->setNom('Dupont');
         $user->setPrenom('Toto');
@@ -59,31 +55,43 @@ class ProjetFixtures extends Fixture
         $user->setAPropos("c'est moi");
         $user->setInstagram("instagram.com");
         
-        $manager->persist($superAdmin);
+        // Persister l'utilisateur et l'ADMIN
         $manager->persist($admin);
         $manager->persist($user);
 
-        // ------------------------ CATEGORIES ------------------------//
+        /* ------------------------------------------------------
+        ---------------------- CATEGORIES -----------------------
+        ----            Création des catégories            ------
+        -------------------------------------------------------*/
+      
+        // Catégorie 1
         $cat1 = new Categorie();
         $cat1->setTitre("Professionnel");
         $cat1->setNom('Objet');
         $cat1->setSlug('objet');
 
+        // Catégorie 2
         $cat2 = new Categorie();
         $cat2->setTitre("Art");
         $cat2->setNom('Paysage');
         $cat2->setSlug('paysage');
     
+        // Catégorie 3
         $cat3 = new Categorie();
         $cat3->setTitre("Professionnel");
         $cat3->setNom('Immobilier');
         $cat3->setSlug('immobilier');
         
+        // Persister les catégories
         $manager->persist($cat1);
         $manager->persist($cat2);
         $manager->persist($cat3);
 
-        // ------------------------ CATEGORIES ------------------------//
+        /* ------------------------------------------------------
+        ------------------------ PHOTOS -------------------------
+        ----              Création d'une photo             ------
+        -------------------------------------------------------*/
+
         $ph = new Photo();
         $ph->setNom('photoAccueil');
         $ph->setDescription("lorem ipsum blabla");
@@ -94,9 +102,18 @@ class ProjetFixtures extends Fixture
 
         $manager->persist($ph);
 
-        // ------------------------ PROJET 1 ------------------------//
+        /* ------------------------------------------------------
+        ------------------------ PROJETS ------------------------
+        -------------------------------------------------------*/
+
+        /* -----------------
+        --     PROJET 1   --
+        ------------------*/
+
+        // Pour chaque projet dans la catégorie 1 (3)
         for ($i = 1; $i <= 3; $i++) {
 
+            // Création du projet 1
             $proj1 = new Projet();
             $proj1->setTitre("A la plage_" . $i);
             $proj1->setDescription("je ne sais pas");
@@ -106,7 +123,7 @@ class ProjetFixtures extends Fixture
             $proj1->setUser($admin);
             $proj1->addCategorie($cat1);
 
-
+            // Création de la photo principale 
             $ph1 = new Photo();
             $ph1->setNom('La plage_' . $i);
             $ph1->setDescription("lorem ipsum blabla");
@@ -120,8 +137,10 @@ class ProjetFixtures extends Fixture
             $ph1->setEtat(1);
             $ph1->setProjet($proj1);
 
+            // Persister la photo principale
             $manager->persist($ph1);
 
+            // Création de 2 photos secondaires pour le projet 1
             for ($j = 1; $j <= 2; $j++) {
                 $ph2 = new Photo();
                 $ph2->setNom('La plage_' . $j);
@@ -136,14 +155,22 @@ class ProjetFixtures extends Fixture
                 $ph2->setEtat(2);
                 $ph2->setProjet($proj1);
 
+                // Persister les photos
                 $manager->persist($ph2);
             }
+
+            // Persister le projet 1
             $manager->persist($proj1);
         }
 
-        // ------------------------ PROJET 2 ------------------------//
+        /* -----------------
+        --     PROJET 2   --
+        ------------------*/
+
+         // Pour chaque projet dans la catégorie 2 (3)
         for ($i = 1; $i <= 3; $i++) {
 
+            // Création du projet 2
             $proj2 = new Projet();
             $proj2->setTitre("A la montagne_" . $i);
             $proj2->setDescription("blablabla de la montagne");
@@ -153,7 +180,7 @@ class ProjetFixtures extends Fixture
             $proj2->setUser($admin);
             $proj2->addCategorie($cat2);
 
-
+            // Création de la photo principale
             $ph1 = new Photo();
             $ph1->setNom('La montagne_' . $i);
             $ph1->setDescription("lorem ipsum montagne");
@@ -167,8 +194,10 @@ class ProjetFixtures extends Fixture
             $ph1->setEtat(1);
             $ph1->setProjet($proj2);
 
+            // Persister la photo
             $manager->persist($ph1);
 
+            // Création de 2 photos secondaires pour le projet 2
             for ($j = 1; $j <= 2; $j++) {
                 $ph2 = new Photo();
                 $ph2->setNom('La montagne_' . $j);
@@ -183,13 +212,20 @@ class ProjetFixtures extends Fixture
                 $ph2->setEtat(2);
                 $ph2->setProjet($proj2);
 
+                // Persister les photos
                 $manager->persist($ph2);
 
             }
+
+            // Persister le projet 2
             $manager->persist($proj2);
         }
 
-        // ------------------------ PROJET 3 ------------------------//
+        /* -----------------
+        --     PROJET 3   --
+        ------------------*/
+
+        // Création du projet 3
         $proj3 = new Projet();
         $proj3->setTitre("A la campagne");
         $proj3->setDescription("je ne sais pas");
@@ -200,6 +236,7 @@ class ProjetFixtures extends Fixture
         $proj3->addCategorie($cat2);
         $proj3->addCategorie($cat3);
 
+        // Création de la photo principale
         $ph1 = new Photo();
         $ph1->setNom('La plage_');
         $ph1->setDescription("lorem ipsum blabla");
@@ -213,8 +250,10 @@ class ProjetFixtures extends Fixture
         $ph1->setEtat(1);
         $ph1->setProjet($proj3);
 
+        // Persister la photo
         $manager->persist($ph1);
 
+        // Création de 2 photos secondaires pour le projet 3
         for ($j = 1; $j <= 2; $j++) {
             $ph2 = new Photo();
             $ph2->setNom('La plage_' . $j);
@@ -229,12 +268,19 @@ class ProjetFixtures extends Fixture
             $ph2->setEtat(2);
             $ph2->setProjet($proj3);
 
+            // Persister les photos
             $manager->persist($ph2);
         }
+
+        // Persister le projet 3
         $manager->persist($proj3);
 
 
-        // ------------------------ COMMENTAIRES ------------------------//
+        /* ------------------------------------------------------
+        ---------------------- COMMENTAIRES ---------------------
+        -------------------------------------------------------*/
+
+        // Création des commentaires
         for($k = 1 ; $k<=5 ; $k++){
             $commentaire = new Commentaire();
             $commentaire->setContenu("Lorem ipsum");
@@ -243,7 +289,8 @@ class ProjetFixtures extends Fixture
             $commentaire->setUser($user);
             $commentaire->setPhoto($ph1);
 
-             $manager->persist($commentaire);
+            // Persister les commentaires
+            $manager->persist($commentaire);
         }
 
         $manager->flush();

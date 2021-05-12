@@ -25,15 +25,22 @@ class UserCrudController extends AbstractCrudController
         return User::class;
     }
 
+    // Fonction pour configurer le menu utilisateurs
     public function configureFields(string $pageName): iterable
     {
         return [
             FormField::addPanel('Utilisateur :'),
+
             TextField::new('nom'),
+
             TextField::new('prenom'),
+
             EmailField::new('email'),
+
             TextField::new('telephone')->hideOnIndex(),
+
             ArrayField::new('roles')->hideOnForm(),
+
             ChoiceField::new('roles', 'Roles')
                 ->allowMultipleChoices()
                 ->autocomplete()
@@ -42,15 +49,21 @@ class UserCrudController extends AbstractCrudController
                               'SuperAdmin' => 'ROLE_SUPER_ADMIN']
                             )
                 ->setPermission('ROLE_SUPER_ADMIN'),
+
             FormField::addPanel('Détail :'),
+
             UrlField::new('facebook')->hideOnIndex(),
+
             UrlField::new('instagram')->hideOnIndex(),
+
             UrlField::new('linkedin')->hideOnIndex(),
+
             TextareaField::new('aPropos')->hideOnIndex(),
 
         ];
     }
     
+    // Fonction permettant de gérer les actions dans la partie Admin
     public function configureActions(Actions $actions): Actions
     {
         // $viewInvoice = Action::new('')
@@ -58,12 +71,11 @@ class UserCrudController extends AbstractCrudController
 
         return $actions
     
-        ->add(Crud::PAGE_INDEX, Action::DETAIL)
-        // ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN')
-        // ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN');
-        ->disable(Action::DELETE, Action::NEW);
+        ->add(Crud::PAGE_INDEX, Action::DETAIL) // Possibilité de voir les détails d'un utilisateur
+        ->disable(Action::DELETE, Action::NEW); // Impossible de supprimer ou créer un utilisateur
     }
     
+    // Fonction permettant de changer les titres
     public function configureCrud(Crud $crud): Crud
     {
         return $crud

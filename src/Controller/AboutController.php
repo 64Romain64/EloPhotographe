@@ -16,6 +16,7 @@ class AboutController extends AbstractController
     public function index(UserRepository $userRepository, PhotoRepository $photoRepository): Response
     {
 
+        // Permet de trouver la photo dont le nom est photoAbout. Permet son affichage dans la page about
         $photo = $photoRepository->findBy(['nom' => 'photoAbout']);
 
         return $this->render('about/index.html.twig', [

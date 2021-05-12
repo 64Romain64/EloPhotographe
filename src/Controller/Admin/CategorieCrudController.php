@@ -18,31 +18,39 @@ class CategorieCrudController extends AbstractCrudController
         return Categorie::class;
     }
 
+    // Fonction Permettant d'ajouter un filtre par titre
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
             ->add('titre');
     }
 
+    // Fonction pour configurer le menu catégorie
     public function configureFields(string $pageName): iterable
     {
         return [
-            
             ChoiceField::new('titre', 'Menu')
-                ->setHelp('Le menu correspond aux intitulés de la barre de navigation')
-                ->setChoices(['Professionnel' => 'Professionnel',
-                              'Art' => 'Art']
-                            ),
+                ->setHelp('Le menu correspond aux intitulés de la barre de navigation') // Message d'aide
+                ->setChoices(['Professionnel' => 'Professionnel', // Choix des catégories
+                              'Art' => 'Art']),
+                              
             TextField::new('nom', 'Nom du sous-Menu'),
-            AssociationField::new('projets', 'Nombre de projets')->hideOnForm(),
 
-            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
+            AssociationField::new('projets', 'Nombre de projets')->hideOnForm(), // Cacher sur le formulaire
+
+            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(), // Cacher sur l'index
 
         ];
     }
 
+    /* Fonction permettant :
+            - l'affichage des projets par ordre chronologique
+            - Modifier les titres
+    */
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud->setDefaultSort(['titre' => 'ASC']);
+        return $crud
+            ->setDefaultSort(['titre' => 'ASC'])
+            ->setPageTitle('new', 'Ajouter un sous-menu');;;
     }
 }
