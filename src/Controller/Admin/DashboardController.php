@@ -31,7 +31,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
+     * @Route("/160612admin230211", name="160612admin230211")
      */
     public function index(): Response
     {
