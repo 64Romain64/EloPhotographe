@@ -42,6 +42,17 @@ class ProjetFixtures extends Fixture
         $admin->setInstagram("https://www.instagram.com/elophotographe_64/");
         $admin->setLinkedin("https://fr.linkedin.com/in/elodie-gonthier-0557561b8");
         $admin->setFacebook("https://fr-fr.facebook.com/elodiegonthierphotographe");
+
+        // Création d'un rôle ADMIN
+        $superAdmin = new User();
+        $superAdmin->setNom('Super');
+        $superAdmin->setPrenom('Admin');
+        $superAdmin->setEmail('superadmin@admin.com');
+        $superAdmin->setRoles(['ROLE_SUPER_ADMIN']);
+        $hash = $this->encoder->encodePassword($superAdmin, "toto");
+        $superAdmin->setPassword($hash);
+        $superAdmin->setTelephone('0559111111');
+
         
         // Création d'un utilisateur normal
         $user = new User();
@@ -57,6 +68,7 @@ class ProjetFixtures extends Fixture
         
         // Persister l'utilisateur et l'ADMIN
         $manager->persist($admin);
+        $manager->persist($superAdmin);
         $manager->persist($user);
 
         /* ------------------------------------------------------

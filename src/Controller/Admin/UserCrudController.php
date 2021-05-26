@@ -70,9 +70,10 @@ class UserCrudController extends AbstractCrudController
         // ->linkToCrudAction('');
 
         return $actions
-    
+
         ->add(Crud::PAGE_INDEX, Action::DETAIL) // Possibilité de voir les détails d'un utilisateur
-        ->disable(Action::DELETE, Action::NEW); // Impossible de supprimer ou créer un utilisateur
+        ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
+        ->disable(Action::DELETE); // Impossible de supprimer ou créer un utilisateur
     }
     
     // Fonction permettant de changer les titres
