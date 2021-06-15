@@ -50,8 +50,8 @@
 				</ul>
 			</li>
 			{# <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mega-menu">
-																			<a href="{{path ('visites')}}">Visites Virtuelles</a>
-																		</li> #}
+																						<a href="{{path ('visites')}}">Visites Virtuelles</a>
+																					</li> #}
 			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
 				<a href="{{path ('about')}}">ABOUT</a>
 			</li>
@@ -81,6 +81,7 @@
 							</a>
 						</li>
 					{% endif %}
+
 					{% if is_granted('ROLE_ADMIN') %}
 						<li>
 							<a style="color:blue" href="{{path ('160612admin230211')}}" target="_blank">
@@ -94,8 +95,8 @@
 								<i class="fa fa-sign-out"></i>Deconnexion
 							</a>
 						</li>
-					</ul>
-				{% endif %}
+					{% endif %}
+				</ul>
 			</div>
 		</div>
 	</nav>

@@ -23,13 +23,13 @@ class ProjetRepository extends ServiceEntityRepository
 
     /* -----------------------------------------------------
     Fonction permettant de trouver les projets qui ont pour 
-    statut 1 
+    statut 1 et étant de la même catégorie
     ------------------------------------------------------*/
     
     /**
      * @return Projet[] Return an array of peinture objects
      */
-    public function findAllActualite(Categorie $categorie): array
+    public function findAllPortfolio(Categorie $categorie): array
     {
         return $this->createQueryBuilder('p')
             ->where(':categorie MEMBER OF p.categorie')
@@ -39,4 +39,12 @@ class ProjetRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /* Requêtes SQL : 
+    Affiche tous les projets par catégorie : 
+    SELECT * FROM `projet_categorie` AS pc LEFT JOIN `projet` AS p ON p.statut = 1 LEFT JOIN `categorie` AS c ON c.id WHERE pc.categorie_id = c.id AND pc.projet_id = p.id
+
+    Affiche tous les projets dont la catégorie est 147. Dans ProfessionnelController un paramètre sera passé pour récupérer la catégorie
+    SELECT * FROM `projet_categorie` AS pc LEFT JOIN `projet` AS p ON p.statut = 1 LEFT JOIN `categorie` AS c ON c.id = 147($categorie) WHERE pc.categorie_id = c.id AND pc.projet_id = p.id
+    */
 }
+

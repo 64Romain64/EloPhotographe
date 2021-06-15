@@ -14,11 +14,14 @@ class ProfessionnelController extends AbstractController
     /**
      * @Route("/professionnel-{slug}", name="professionnel")
      */
-    public function professionnel(Categorie $categorie, ProjetRepository $projetRepository, UserRepository $userRepository): Response
+    public function professionnel(
+        Categorie $categorie, 
+        ProjetRepository $projetRepository, 
+        UserRepository $userRepository): Response
     {
         // Permet de trouver les projets qui ont la même catégorie et dont le statut est 1
-        // findAllActualité est une fonction dans le ProjetRepository.php
-        $projet = $projetRepository->findAllActualite($categorie);
+        // findAllPortfolio est une fonction dans le ProjetRepository.php
+        $projet = $projetRepository->findAllPortfolio($categorie);
 
         return $this->render('professionnel/index.html.twig', [
             'photographe' => $userRepository->getPhotographe(),
@@ -30,7 +33,9 @@ class ProfessionnelController extends AbstractController
     /**
      * @Route("/projet/{slug}/{id}", name="projet")
      */
-    public function projet($id, ProjetRepository $projetRepository, UserRepository $userRepository): Response
+    public function projet($id, 
+    ProjetRepository $projetRepository, 
+    UserRepository $userRepository): Response
     {
         // Permet de trouver les ID du projet
         $projet = $projetRepository->find($id);
@@ -41,3 +46,4 @@ class ProfessionnelController extends AbstractController
         ]);
     }
 }
+

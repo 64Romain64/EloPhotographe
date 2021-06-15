@@ -3,24 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
+			{% block title %}
+				Welcome!
 			{% endblock %}
 		</title>
-		{# Run `composer require symfony/webpack-encore-bundle`
-				and uncomment the following Encore helpers to start using Symfony UX #}
+
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
-			<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBF1M8RCJJ"></script>
-			<script>
-				window.dataLayer = window.dataLayer || [];
-					function gtag() {
-						dataLayer.push(arguments);
-					}
-					gtag('js', new Date());
-					gtag('config', 'G-QBF1M8RCJJ');
-			</script>
-			
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="stylesheet" href="{{asset ('css/animsition.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/jquery.flipster.min.css') }}">
@@ -46,57 +35,60 @@
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/wp-mediaelement.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('lib/mediaelement/mediaelementplayer-legacy.min.css') }}">
 			<link rel="stylesheet" href="{{asset ('css/admin-ajax.css?v=1') }}">
-			<link
-			rel="stylesheet" href="{{asset ('css/romain.css') }}">
-		{# <link rel="shortcut icon" href="{{asset ('images/fx_.png') }}"> #}
+			<link rel="stylesheet" href="{{asset ('css/romain.css') }}">
+			<link rel="shortcut icon" href="assets/images/fx_favicon.png"/>
 
 		{% endblock %}
+
 	</head>
 	<body>
 
-		{% block body %}{% endblock %}
+		{% block body %}
+		{% endblock %}
 
 		{% block footer %}
-
 			{% include "base/footer.html.twig" %}
-
 		{% endblock %}
+
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+			<script src="{{ asset ('js/jquery-3.3.1.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery-migrate.min.js') }} "></script>
+			<script src="{{ asset ('js/lib/modernizr-2.6.2.min.js') }}"></script>
+			<script src="{{ asset ('js/lib/scripts.js') }}"></script>
+			<script src="{{ asset ('js/anime.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.countdown.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.justifiedGallery.js') }} "></script>
+			<script src="{{ asset ('js/lib/idangerous.swiper.min_.js') }}"></script>
+			<script src="{{ asset ('js/jquery.flipster.min.js') }}"></script>
+			<script src="{{ asset ('js/foxlazy.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.easings.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.multiscroll.min.js') }}"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+			<script src="{{ asset ('js/kenburning.min.js') }}"></script>
+			<script src="{{ asset ('js/equalHeightsPlugin.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.fancybox.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.fitvids.min.js') }}"></script>
+			<script src="{{ asset ('js/zepto.min.js') }}"></script>
+			<script src="{{ asset ('js/swiper3.min.js') }}"></script>
+			<script src="{{ asset ('js/imagesloaded.pkgd.min.js') }}"></script>
+			<script src="{{ asset ('js/fragment.js') }}"></script>
+			<script src="{{ asset ('js/scrollMonitor.min.js') }}"></script>
+			<script src="{{ asset ('js/slider-transition.min.js') }}"></script>
+			<script src="http://www.youtube.com/iframe_api"></script>
+			<script src="{{ asset ('lib/js/jquery.mousewheel.min.js') }}"></script>
+			<script src="{{ asset ('lib/js/lightgallery.min.js') }}"></script>
+			<script src="{{ asset ('lib/js/jquery.justifiedGallery.min.js') }}"></script>
+			<script src="{{ asset ('js/jquery.sliphover.min.js') }}"></script>
+			<script src="{{ asset ('js/lib/thumbnails-popup.min.js') }}"></script>
+			<script src="{{ asset ('js/pixi.min.js') }}"></script>
+			<script src="{{ asset ('js/script.js') }}"></script>
+			<script src="{{ asset ('js/js_composer_front.min.js') }} "></script>
+			<script src="{{ asset ('js/email-decode.min.js') }} "></script>
+			<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		
+		{% endblock %}
+
 	</body>
-	{% block javascripts %}
-		{#{{ encore_entry_script_tags('app') }}#}
-		<script src="{{ asset ('js/jquery-3.3.1.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery-migrate.min.js') }} "></script>
-		<script src="{{ asset ('js/lib/modernizr-2.6.2.min.js') }}"></script>
-		<script src="{{ asset ('js/lib/scripts.js') }}"></script>
-		<script src="{{ asset ('js/anime.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.countdown.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.justifiedGallery.js') }} "></script>
-		<script src="{{ asset ('js/lib/idangerous.swiper.min_.js') }}"></script>
-		<script src="{{ asset ('js/jquery.flipster.min.js') }}"></script>
-		<script src="{{ asset ('js/foxlazy.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.easings.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.multiscroll.min.js') }}"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-		<script src="{{ asset ('js/kenburning.min.js') }}"></script>
-		<script src="{{ asset ('js/equalHeightsPlugin.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.fancybox.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.fitvids.min.js') }}"></script>
-		<script src="{{ asset ('js/zepto.min.js') }}"></script>
-		<script src="{{ asset ('js/swiper3.min.js') }}"></script>
-		<script src="{{ asset ('js/imagesloaded.pkgd.min.js') }}"></script>
-		<script src="{{ asset ('js/fragment.js') }}"></script>
-		<script src="{{ asset ('js/scrollMonitor.min.js') }}"></script>
-		<script src="{{ asset ('js/slider-transition.min.js') }}"></script>
-		<script src="http://www.youtube.com/iframe_api"></script>
-		<script src="{{ asset ('lib/js/jquery.mousewheel.min.js') }}"></script>
-		<script src="{{ asset ('lib/js/lightgallery.min.js') }}"></script>
-		<script src="{{ asset ('lib/js/jquery.justifiedGallery.min.js') }}"></script>
-		<script src="{{ asset ('js/jquery.sliphover.min.js') }}"></script>
-		<script src="{{ asset ('js/lib/thumbnails-popup.min.js') }}"></script>
-		<script src="{{ asset ('js/pixi.min.js') }}"></script>
-		<script src="{{ asset ('js/script.js') }}"></script>
-		<script src="{{ asset ('js/js_composer_front.min.js') }} "></script>
-		<script src="{{ asset ('js/email-decode.min.js') }} "></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	{% endblock %}
+
 </html>

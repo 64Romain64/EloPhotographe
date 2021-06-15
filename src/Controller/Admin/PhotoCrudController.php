@@ -37,26 +37,22 @@ class PhotoCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nom', 'Nom de la photo')
-            ->setHelp('Pour mettre une photo en présentation du site, appelé "photoAccueil"'),
-
-            AssociationField::new('projet', 'Photo associée au projet :')->hideOnForm(),
-
-            TextareaField::new('description', 'Description de la photo')->hideOnIndex(),
+            yield TextField::new('nom', 'Nom de la photo')
+            ->setHelp('Pour mettre une photo en présentation du site, nommer "photoAccueil"'),
+             yield AssociationField::new('projet', 'Photo associée au projet :')->hideOnForm(),
+             yield TextareaField::new('description', 'Description de la photo')->hideOnIndex(),
             // TextareaField::new('cadre')->hideOnIndex(),
             // NumberField::new('largeur')->hideOnIndex(),
             // NumberField::new('hauteur')->hideOnIndex(),
             // NumberField::new('prix')->hideOnIndex(),
             // BooleanField::new('enVente'),
-
-            ImageField::new('file', 'Image')
+             yield ImageField::new('file', 'Image')
             ->setBasePath('/images/')
             ->setUploadDir('public/images')
             ->setFormType(FileUploadType::class)
             ->setUploadedFileNamePattern('[slug].[extension]'),
             // TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
-
-            ChoiceField::new('etat', 'Principale ou secondaire')
+             yield ChoiceField::new('etat', 'Principale ou secondaire')
             ->setHelp('<b>Choisir 1 photo comme principale seulement</b></br>
                 <b>Principale : </b><i>Affichage de la photo sur la page du projet</i></br> 
                 <b>Secondaire : </b><i>Affichage des photos dans le projet</i>')
@@ -64,10 +60,8 @@ class PhotoCrudController extends AbstractCrudController
                 ['<h5>PRINCIPALE</h5>' => 1,
                 'Secondaire' => 2]
             ),
-          
-            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex()->setHelp("Chemin 'url' de la photo"),
-
-            AssociationField::new('projet', 'Photo associée au projet :')->hideOnIndex(),
+             yield SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex()->setHelp("Chemin 'url' de la photo"),
+             yield AssociationField::new('projet', 'Photo associée au projet :')->hideOnIndex(),
         ];
     }
 

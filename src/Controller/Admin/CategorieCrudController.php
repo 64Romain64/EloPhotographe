@@ -29,16 +29,13 @@ class CategorieCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ChoiceField::new('titre', 'Menu')
+            yield ChoiceField::new('titre', 'Menu')
                 ->setHelp('Le menu correspond aux intitulés de la barre de navigation') // Message d'aide
                 ->setChoices(['Professionnel' => 'Professionnel', // Choix des catégories
-                              'Art' => 'Art']),
-                              
-            TextField::new('nom', 'Nom du sous-Menu'),
-
-            AssociationField::new('projets', 'Nombre de projets')->hideOnForm(), // Cacher sur le formulaire
-
-            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(), // Cacher sur l'index
+                              'Art' => 'Art']),      
+            yield TextField::new('nom', 'Nom du sous-Menu'),
+            yield AssociationField::new('projets', 'Nombre de projets')->hideOnForm(), // Cacher sur le formulaire
+            yield SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(), // Cacher sur l'index
 
         ];
     }

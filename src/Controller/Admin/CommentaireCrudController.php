@@ -22,15 +22,11 @@ class CommentaireCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('Contenu')->hideOnForm(),
-
-            TextField::new('Contenu', "Contenu du commentaire")->hideOnIndex(),
-
-            DateTimeField::new('date', 'Date et heure'),
-
-            BooleanField::new('publie'),
-            
-            AssociationField::new('user')
+            yield TextField::new('Contenu')->hideOnForm(),
+            yield TextField::new('Contenu', "Contenu du commentaire")->hideOnIndex(),
+            yield DateTimeField::new('date', 'Date et heure'),
+            yield BooleanField::new('publie'),
+            yield AssociationField::new('user')
         ];
     }
 

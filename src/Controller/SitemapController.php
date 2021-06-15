@@ -22,7 +22,10 @@ class SitemapController extends AbstractController
     /**
      * @Route("/sitemap.xml", name="sitemap", defaults={"_format"="xml"})
      */
-    public function index(Request $request, ProjetRepository $projetRepository, CategorieRepository $categorieRepository): Response
+    public function index(
+        Request $request, 
+        ProjetRepository $projetRepository, 
+        CategorieRepository $categorieRepository): Response
     {
         // Permet de récuperer l'URL
         $hostname = $request->getSchemeAndHttpHost();
@@ -57,3 +60,5 @@ class SitemapController extends AbstractController
         return $response;
     }
 }
+
+

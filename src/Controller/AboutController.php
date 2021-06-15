@@ -13,10 +13,13 @@ class AboutController extends AbstractController
     /**
      * @Route("/a-propos", name="about")
      */
-    public function index(UserRepository $userRepository, PhotoRepository $photoRepository): Response
+    public function index(
+        UserRepository $userRepository, 
+        PhotoRepository $photoRepository): Response
     {
 
-        // Permet de trouver la photo dont le nom est photoAbout. Permet son affichage dans la page about
+        /* Permet de trouver la photo dont le nom est photoAbout. 
+        Permet son affichage dans la page about */
         $photo = $photoRepository->findBy(['nom' => 'photoAbout']);
 
         return $this->render('about/index.html.twig', [
@@ -26,3 +29,4 @@ class AboutController extends AbstractController
         
     }
 }
+

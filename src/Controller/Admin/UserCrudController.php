@@ -29,19 +29,13 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            FormField::addPanel('Utilisateur :'),
-
-            TextField::new('nom'),
-
-            TextField::new('prenom'),
-
-            EmailField::new('email'),
-
-            TextField::new('telephone')->hideOnIndex(),
-
-            ArrayField::new('roles')->hideOnForm(),
-
-            ChoiceField::new('roles', 'Roles')
+            yield FormField::addPanel('Utilisateur :'),
+            yield TextField::new('nom'),
+            yield TextField::new('prenom'),
+            yield EmailField::new('email'),
+            yield TextField::new('telephone')->hideOnIndex(),
+            yield ArrayField::new('roles')->hideOnForm(),
+            yield ChoiceField::new('roles', 'Roles')
                 ->allowMultipleChoices()
                 ->autocomplete()
                 ->setChoices(['User' => 'ROLE_USER',
@@ -49,17 +43,11 @@ class UserCrudController extends AbstractCrudController
                               'SuperAdmin' => 'ROLE_SUPER_ADMIN']
                             )
                 ->setPermission('ROLE_SUPER_ADMIN'),
-
-            FormField::addPanel('Détail :'),
-
-            UrlField::new('facebook')->hideOnIndex(),
-
-            UrlField::new('instagram')->hideOnIndex(),
-
-            UrlField::new('linkedin')->hideOnIndex(),
-
-            TextareaField::new('aPropos')->hideOnIndex(),
-
+            yield FormField::addPanel('Détail :'),
+            yield UrlField::new('facebook')->hideOnIndex(),
+            yield UrlField::new('instagram')->hideOnIndex(),
+            yield UrlField::new('linkedin')->hideOnIndex(),
+            yield TextareaField::new('aPropos')->hideOnIndex(),
         ];
     }
     
@@ -72,8 +60,8 @@ class UserCrudController extends AbstractCrudController
         return $actions
 
         ->add(Crud::PAGE_INDEX, Action::DETAIL) // Possibilité de voir les détails d'un utilisateur
-        ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN')
-        ->disable(Action::DELETE); // Impossible de supprimer ou créer un utilisateur
+        ->setPermission(Action::NEW, 'ROLE_SUPER_ADMIN');
+        // ->disable(Action::DELETE); // Impossible de supprimer ou créer un utilisateur
     }
     
     // Fonction permettant de changer les titres

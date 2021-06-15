@@ -15,7 +15,11 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="main")
      */
-    public function index(ProjetRepository $projetRepository, UserRepository $userRepository, CommentaireRepository $commentaireRepository, PhotoRepository $photoRepository): Response
+    public function index(
+        ProjetRepository $projetRepository, 
+        UserRepository $userRepository, 
+        CommentaireRepository $commentaireRepository, 
+        PhotoRepository $photoRepository): Response
     {
         // Statut -> O : Actualité / 1 : Portfolio / 2 : Archives
         // Permet de retrouver les catégories avec un statut 0 
@@ -24,7 +28,8 @@ class MainController extends AbstractController
         // Permet de retrouver les commentaires qui ont été publié
         $commentaire = $commentaireRepository->findby(["publie" => true]); 
 
-        // Permet de trouver la photo dont le nom est photoAccueil. Permet son affichage dans la page d'accueil
+        // Permet de trouver la photo dont le nom est photoAccueil. 
+        // Permet son affichage dans la page d'accueil
         $photo = $photoRepository->findBy(['nom' => 'photoAccueil']); 
 
         return $this->render('main/index.html.twig', [

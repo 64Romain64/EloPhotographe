@@ -30,3 +30,4 @@ class ContactType extends AbstractType
         ]);
     }
 }
+

@@ -48,7 +48,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->getOneOrNullResult();
     }
 
-
+    // Requêtes SQL : SELECT * FROM `user` WHERE user.roles = '["ROLE_ADMIN"]'
 
     // /**
     //  * @return User[] Returns an array of User objects

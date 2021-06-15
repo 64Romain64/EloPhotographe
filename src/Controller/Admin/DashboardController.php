@@ -31,6 +31,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 class DashboardController extends AbstractDashboardController
 {
     /**
+     * @@Security("is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN')")
      * @Route("/160612admin230211", name="160612admin230211")
      */
     public function index(): Response
@@ -89,7 +90,6 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Commentaires');
         yield MenuItem::linkToCrud('<b>Commentaire</b>', 'fas fa-comments', Commentaire::class);
-
     }
 
     // Configuration de l'onget en haut à droite dans l'administration

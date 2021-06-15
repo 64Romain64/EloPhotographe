@@ -24,3 +24,5 @@ liip_imagine:
             filters : 
                 scale : 
                     dim : [600, 600]
+
+

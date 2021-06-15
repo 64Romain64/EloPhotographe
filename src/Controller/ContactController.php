@@ -17,17 +17,28 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request, ContactService $contactService, UserRepository $userRepository, PhotoRepository $photoRepository): Response
+    public function index(
+        Request $request, 
+        ContactService $contactService, 
+        UserRepository $userRepository, 
+        PhotoRepository $photoRepository): Response
     {
 
-        // Permet de trouver la photo dont le nom est photoContact. Permet son affichage dans la page contact
+        // Permet de trouver la photo dont le nom est photoContact. 
+        // Permet son affichage dans la page contact
         $photo = $photoRepository->findBy(['nom' => 'photoContact']);
 
-        // Envoi d'un mail
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
+        // Envoi du formulaire de contact
+        $contact = new Contact(); // Créer un nouveau contact
+        // On créer un formulaire qui provient de ContactType. On le lie à l'objet contact 
+        $form = $this->createForm(ContactType::class, $contact); 
+        /* On vérifie s'il y a des choses dans la requête. 
+        !! NE PAS OUBLIER : Request $request !!! */
         $form->handleRequest($request);
 
+        /* Tester si c'est la premiere fois qu'on affiche la page 
+        ou bien si des données ont été saisi et que le format est valide
+        */
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
             $contactService->persistContact($contact);
@@ -41,3 +52,4 @@ class ContactController extends AbstractController
         ]);
     }
 }
+

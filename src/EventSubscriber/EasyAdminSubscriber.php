@@ -32,6 +32,19 @@ class EasyAdminSubscriber implements EventSubscriberInterface {
 
         $entity = $event->getEntityInstance();
 
+        // if(!($entity instanceof Projet)) {
+        //     return;
+        // }
+
+        // $slug = $this->slugger->slug($entity->getTitre());
+        // $entity->setSlug($slug);
+
+        // $now = new DateTime('now');
+        // $entity->setDate($now);
+
+        // $user = $this->security->getUser();
+        // $entity->setUser($user);
+
         if (($entity instanceof Projet)) {
             $now = new DateTime('now');
             $entity->setDate($now);
